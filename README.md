@@ -16,9 +16,9 @@
 - [x] Fill out Now
 - [x] Deploy to Netlify
 - [x] Remove unwanted files
-- [ ] Fix "The One" image
-- [ ] Remove divider line (in posts and such)
-- [ ] Add goatcounter
+- [x] Fix "The One" image
+- [x] Remove divider line (in posts and such)
+- [x] Add umami
 - [ ] Fix Load Comments
 - [ ] Center the images in the blog posts
 - [ ] add newsletter
