@@ -19,7 +19,7 @@
 - [x] Fix "The One" image
 - [x] Remove divider line (in posts and such)
 - [x] Add umami
-- [ ] Fix Load Comments
+- [x] Fix Load Comments
 - [ ] Center the images in the blog posts
 - [ ] add newsletter
 - [ ] Fix lighthouse issues

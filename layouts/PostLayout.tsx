@@ -1,11 +1,10 @@
 import { ReactNode } from 'react'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Post, Authors } from 'contentlayer/generated'
-import Comments from '@/components/Comments'
 import Link from '@/components/Link'
 import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
-import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import ScrollTop from '@/components/ScrollTopAndComment'
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -27,7 +26,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
 
   return (
     <SectionContainer>
-      <ScrollTopAndComment />
+      <ScrollTop />
       <article>
         <div className="">
           <header className="pt-6 xl:pb-6">
@@ -54,14 +53,6 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
               <div className="prose prose-stone max-w-none pb-8 pt-10 text-justify dark:prose-invert">
                 {children}
               </div>
-              {/* {siteMetadata.comments && (
-                <div
-                  className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"
-                  id="comment"
-                >
-                  <Comments slug={slug} />
-                </div>
-              )} */}
             </div>
             <footer>
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
