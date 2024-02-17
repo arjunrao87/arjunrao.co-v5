@@ -19,4 +19,5 @@
 - [ ] Fix Load Comments
 - [ ] add newsletter
 - [ ] Remove unwanted files
+- [ ] Remove divider line (in posts and such)
 - [ ] Add goatcounter

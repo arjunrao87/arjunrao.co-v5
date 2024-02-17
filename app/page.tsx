@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 import SocialIcon from '@/components/social-icons'
 import NextImage from 'next/image'
 
@@ -37,9 +37,23 @@ export default async function Home() {
           <div className="prose prose-stone max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
             <p>Hi, I am Arjun Rao!</p>
             <ul>
-              <li>VP of Engineering at <Link href="https://www.placeexchange.com/about"  rel="noopener noreferrer" target="_blank">Place Exchange</Link>, an adtech startup in New York City. Previously at BlackRock, Harris Corporation, Rutgers University.</li>
-              <li> In my spare time, I mentor other Engineers and Engineering leaders.</li>
-              <li>Things I like to talk about outside of work - personal finance, crypto, travel, FIRE, real estate, new startup ideas, space, whales (this kind > 🐋 🐳) and fun facts.</li>
+              <li>
+                VP of Engineering at{' '}
+                <Link
+                  href="https://www.placeexchange.com/about"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Place Exchange
+                </Link>
+                , an adtech startup in New York City. Previously at BlackRock, Harris Corporation,
+                Rutgers University.
+              </li>
+              <li> In my spare time, I mentor Engineers and Engineering leaders.</li>
+              <li>
+                I like to talk about personal finance, crypto, travel, FIRE, real estate, new
+                startup ideas, space, whales (this kind {'>'} 🐋 🐳) and fun facts.
+              </li>
             </ul>
           </div>
         </div>

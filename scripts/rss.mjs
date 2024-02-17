@@ -3,7 +3,6 @@ import path from 'path'
 import { slug } from 'github-slugger'
 import { escape } from 'pliny/utils/htmlEscaper.js'
 import siteMetadata from '../data/siteMetadata.js'
-import tagData from '../app/tag-data.json' assert { type: 'json' }
 import { allPosts } from '../.contentlayer/generated/index.mjs'
 import { sortPosts } from 'pliny/utils/contentlayer.js'
 
@@ -14,8 +13,7 @@ const generateRssItem = (config, post) => `
     <link>${config.siteUrl}/posts/${post.slug}</link>
     ${post.summary && `<description>${escape(post.summary)}</description>`}
     <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-    <author>${config.email} (${config.author})</author>
-    ${post.tags && post.tags.map((t) => `<category>${t}</category>`).join('')}
+    <author>${config.author}</author>
   </item>
 `
 
@@ -26,8 +24,8 @@ const generateRss = (config, posts, page = 'feed.xml') => `
       <link>${config.siteUrl}/posts</link>
       <description>${escape(config.description)}</description>
       <language>${config.language}</language>
-      <managingEditor>${config.email} (${config.author})</managingEditor>
-      <webMaster>${config.email} (${config.author})</webMaster>
+      <managingEditor>${config.author}</managingEditor>
+      <webMaster>${config.author}</webMaster>
       <lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>
       <atom:link href="${config.siteUrl}/${page}" rel="self" type="application/rss+xml"/>
       ${posts.map((post) => generateRssItem(config, post)).join('')}
@@ -41,16 +39,6 @@ async function generateRSS(config, allPosts, page = 'feed.xml') {
   if (publishPosts.length > 0) {
     const rss = generateRss(config, sortPosts(publishPosts))
     writeFileSync(`./public/${page}`, rss)
-  }
-
-  if (publishPosts.length > 0) {
-    for (const tag of Object.keys(tagData)) {
-      const filteredPosts = allPosts.filter((post) => post.tags.map((t) => slug(t)).includes(tag))
-      const rss = generateRss(config, filteredPosts, `tags/${tag}/${page}`)
-      const rssPath = path.join('public', 'tags', tag)
-      mkdirSync(rssPath, { re/cursive: true })
-      writeFileSync(path.join(rssPath, page), rss)
-    }
   }
 }
 
