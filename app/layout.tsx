@@ -63,9 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${space_grotesk.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      <Head>
-        <title>Arjun Rao</title>
-      </Head>
+      <title>Arjun Rao</title>
       <link rel="icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
