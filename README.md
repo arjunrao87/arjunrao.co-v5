@@ -12,10 +12,11 @@
 - [x] Remove search bar if not needed
 - [x] Fix TOC Nav in Sober October
 - [x] Replace "AuthorLayout" with just the code instead of mdx
-- [ ] Change H1s to H2/3
+- [x] Change H1s to H2/3
 - [ ] Fill out Now
 - [ ] Deploy to Netlify
 - [ ] Center the images in the blog posts
 - [ ] Fix Load Comments
 - [ ] add newsletter
 - [ ] Remove unwanted files
+- [ ] Add goatcounter
