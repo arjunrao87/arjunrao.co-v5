@@ -21,9 +21,9 @@ module.exports = {
         13: '3.25rem',
         14: '3.5rem',
       },
-      fontFamily: {
-        sans: ['Geneva'],
-      },
+      // fontFamily: {
+      //   sans: ['Geneva'],
+      // },
       colors: {
         primary: colors.pink,
         gray: colors.gray,
