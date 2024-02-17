@@ -12,6 +12,7 @@
 - [x] Remove search bar if not needed
 - [x] Fix TOC Nav in Sober October
 - [ ] Replace "AuthorLayout" with just the code instead of mdx
+- [ ] Change H1s to H2/3
 - [ ] Fill out Now
 - [ ] Deploy to Netlify
 - [ ] Center the images in the blog posts
