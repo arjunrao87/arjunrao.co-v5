@@ -10,11 +10,11 @@
 - [x] Change light/dark theme text
 - [x] Change arjunrao icon
 - [x] Remove search bar if not needed
-- [ ] Remove unwanted files
-- [ ] Fix TOC Nav in Sober October
-- [ ] Fix Load Comments
+- [x] Fix TOC Nav in Sober October
+- [ ] Replace "AuthorLayout" with just the code instead of mdx
 - [ ] Fill out Now
 - [ ] Deploy to Netlify
-- [ ] add newsletter
-- [ ] Replace "AuthorLayout" with just the code instead of mdx
 - [ ] Center the images in the blog posts
+- [ ] Fix Load Comments
+- [ ] add newsletter
+- [ ] Remove unwanted files
