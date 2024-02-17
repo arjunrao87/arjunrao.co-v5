@@ -14,10 +14,11 @@
 - [x] Replace "AuthorLayout" with just the code instead of mdx
 - [x] Change H1s to H2/3
 - [x] Fill out Now
-- [ ] Deploy to Netlify
+- [x] Deploy to Netlify
+- [x] Remove unwanted files
 - [ ] Center the images in the blog posts
+- [ ] Fix "The One" image
 - [ ] Fix Load Comments
 - [ ] add newsletter
-- [ ] Remove unwanted files
 - [ ] Remove divider line (in posts and such)
 - [ ] Add goatcounter
