@@ -8,7 +8,7 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://arjunrao.co',
   siteRepo: 'https://github.com/arjunrao87/arjunrao.co-v5',
-  siteLogo: '/static/images/logo.png',
+  siteLogo: '',
   socialBanner: '/static/images/twitter-card.png',
   mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'address@yoursite.com',
