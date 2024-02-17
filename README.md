@@ -1,4 +1,4 @@
-# arjunrao.co-v5
+# arjunrao.co-v5 [![Netlify Status](https://api.netlify.com/api/v1/badges/c45b7d4b-618e-4cdc-8b61-9ee948baaae2/deploy-status)](https://app.netlify.com/sites/arjunraov5/deploys)
 
 ## TODOs
 
@@ -21,6 +21,8 @@
 - [x] Add umami
 - [x] Fix Load Comments
 - [x] Fix lighthouse issues
+- [x] Cutover with arjunrao.co
+- [ ] Fix iphone/mobile text to be same as desktop
+- [ ] Fix first load of ModeToggle in iphone
 - [ ] Center the images in the blog posts
 - [ ] add newsletter
-- [ ] Cutover with arjunrao.co
