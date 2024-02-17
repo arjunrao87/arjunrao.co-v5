@@ -13,7 +13,7 @@
 - [x] Fix TOC Nav in Sober October
 - [x] Replace "AuthorLayout" with just the code instead of mdx
 - [x] Change H1s to H2/3
-- [ ] Fill out Now
+- [x] Fill out Now
 - [ ] Deploy to Netlify
 - [ ] Center the images in the blog posts
 - [ ] Fix Load Comments
