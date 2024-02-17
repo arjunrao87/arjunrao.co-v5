@@ -20,7 +20,7 @@
 - [x] Remove divider line (in posts and such)
 - [x] Add umami
 - [x] Fix Load Comments
+- [x] Fix lighthouse issues
 - [ ] Center the images in the blog posts
 - [ ] add newsletter
-- [ ] Fix lighthouse issues
 - [ ] Cutover with arjunrao.co
