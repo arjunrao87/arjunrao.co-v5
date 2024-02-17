@@ -16,9 +16,11 @@
 - [x] Fill out Now
 - [x] Deploy to Netlify
 - [x] Remove unwanted files
-- [ ] Center the images in the blog posts
 - [ ] Fix "The One" image
-- [ ] Fix Load Comments
-- [ ] add newsletter
 - [ ] Remove divider line (in posts and such)
 - [ ] Add goatcounter
+- [ ] Fix Load Comments
+- [ ] Center the images in the blog posts
+- [ ] add newsletter
+- [ ] Fix lighthouse issues
+- [ ] Cutover with arjunrao.co

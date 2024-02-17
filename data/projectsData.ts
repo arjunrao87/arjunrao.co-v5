@@ -21,7 +21,7 @@ const projectsData: Project[] = [
   {
     title: 'The One',
     description: `Great recommendations, no confusion!`,
-    imgSrc: '/static/images/theone.jpeg',
+    imgSrc: '/static/images/one.jpg',
     href: 'https://www.producthunt.com/products/the-one#the-one',
   },
   {
