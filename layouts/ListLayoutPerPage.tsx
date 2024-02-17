@@ -2,8 +2,6 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { slug } from 'github-slugger'
-import { formatDate } from 'pliny/utils/formatDate'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Post } from 'contentlayer/generated'
 import Link from '@/components/Link'

@@ -3,13 +3,9 @@ import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Post, Authors } from 'contentlayer/generated'
 import Comments from '@/components/Comments'
 import Link from '@/components/Link'
-import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-
-const discussUrl = (path) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(`${siteMetadata.siteUrl}/${path}`)}`
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -47,7 +43,9 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
                 </div>
               </dl>
               <div>
-                <PageTitle>{title}</PageTitle>
+                <h1 className="prose text-2xl leading-9 tracking-tight dark:prose-invert sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
+                  {title}
+                </h1>
               </div>
             </div>
           </header>

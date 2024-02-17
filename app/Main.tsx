@@ -1,6 +1,6 @@
 import Link from "next/link";
 import SocialIcon from '@/components/social-icons'
-import Image from '@/components/Image'
+import NextImage from 'next/image'
 
 export default function Home() {
   const name = 'Arjun Rao'
@@ -16,7 +16,7 @@ export default function Home() {
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center space-x-2 pt-8">
             {avatar && (
-              <Image
+              <NextImage
                 src={avatar}
                 alt="avatar"
                 width={192}
