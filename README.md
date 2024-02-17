@@ -9,10 +9,10 @@
 - [x] Delete tags
 - [x] Change light/dark theme text
 - [x] Change arjunrao icon
+- [x] Remove search bar if not needed
 - [ ] Remove unwanted files
 - [ ] Fix TOC Nav in Sober October
 - [ ] Fix Load Comments
-- [ ] Remove search bar if not needed
 - [ ] Fill out Now
 - [ ] Deploy to Netlify
 - [ ] add newsletter

@@ -42,19 +42,6 @@ const computedFields: ComputedFields = {
   toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
 }
 
-function createSearchIndex(allPosts) {
-  if (
-    siteMetadata?.search?.provider === 'kbar' &&
-    siteMetadata.search.kbarConfig.searchDocumentsPath
-  ) {
-    writeFileSync(
-      `public/${siteMetadata.search.kbarConfig.searchDocumentsPath}`,
-      JSON.stringify(allCoreContent(sortPosts(allPosts)))
-    )
-    console.log('Local search index generated...')
-  }
-}
-
 export const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: 'posts/**/*.mdx',
@@ -131,6 +118,5 @@ export default makeSource({
   },
   onSuccess: async (importData) => {
     const { allPosts } = await importData()
-    createSearchIndex(allPosts)
   },
 })
