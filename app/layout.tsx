@@ -1,6 +1,6 @@
 import 'css/tailwind.css'
 
-import { Space_Grotesk } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import Header from '@/components/Header'
 import SectionContainer from '@/components/SectionContainer'
@@ -10,10 +10,10 @@ import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import Head from 'next/head'
 
-const space_grotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-space-grotesk',
+  variable: '--font-space-inter',
 })
 
 export const metadata: Metadata = {
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang={siteMetadata.language}
-      className={`${space_grotesk.variable} scroll-smooth`}
+      className={`${inter.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <title>Arjun Rao</title>

@@ -22,7 +22,7 @@
 - [x] Fix Load Comments
 - [x] Fix lighthouse issues
 - [x] Cutover with arjunrao.co
-- [ ] Fix iphone/mobile text to be same as desktop
+- [x] Fix iphone/mobile text to be same as desktop
 - [ ] Fix first load of ModeToggle in iphone
 - [ ] Center the images in the blog posts
 - [ ] add newsletter
