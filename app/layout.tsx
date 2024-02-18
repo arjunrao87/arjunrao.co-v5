@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
-import Head from 'next/head'
+import Script from 'next/script'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -64,11 +64,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <title>Arjun Rao</title>
-      <script
+      <Script
         defer
         src="https://cloud.umami.is/script.js"
         data-website-id="924e4613-1c04-4ab6-bd81-28f16ddfb5a5"
-      ></script>
+      ></Script>
       <link rel="icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
