@@ -34,7 +34,7 @@ const projectsData: Project[] = [
     title: 'OSS Contribution: Kubeless',
     description: `kubeless is a Kubernetes-native serverless framework that lets you deploy small bits of code without having to worry about the underlying infrastructure plumbing`,
     imgSrc: '/static/images/kubeless.png',
-    href: 'https://github.com/vmware-archive/kubeless',
+    href: 'https://youtu.be/8P-aXKylCVs?list=PLj6h78yzYM2P-3-xqvmWaZbbI1sW-ulZb&t=2150',
   },
 ]
 

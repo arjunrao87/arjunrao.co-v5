@@ -1,0 +1,34 @@
+---
+title: 'Smart Plugs, Dumb Humans'
+date: '2024-02-18'
+tags: ['technology']
+draft: false
+summary: Smart plugs and their use of wifi networks
+---
+
+I recently ordered a set of smart switches/plugs to connect a couple of my devices to be schedule based. Of course, at the root of it, is laziness - the avoidance of wanting to switch on and off a light at similar times each day. So in the words of Google SRE and the "Eliminating Toil" where Toil is the kind of work tied to running a production service that tends to be manual, repetitive, automatable, tactical, devoid of enduring value, and that scales linearly as a service grows, I decided to try and be smart about it.
+
+Unfortunately, I wasn't smart enough to actually install it just yet. Once the smart plugs arrived, I noticed that they only connect to 2.4 GHz networks. Now I was fairly sure my router did not support that, and on double checking I noticed Spectrum's leased router, does in fact, no longer support broadcasting multiple networks for the 2 different bands, the other being the default 5 GHz band. FWIW, these two bands are the two areas of the frequency spectrum licensed for open broadcast, in that anyone with a router can broadcast their Wi-Fi signal without impendence or interfering with other broadcasts.
+
+The reason smart plugs use 2.4 GHz because 1) they don't have high bandwidth requirements (its just a plug that requires low fidelity signals like "on/off") 2) for bigger houses which might have smart plugs all over the place, having a longer range 2.4 GHz signal is far more useful.
+
+Unless I bought a new router, I wouldn't be able to use the smart plugs. Regardless, that got me to dust off some of my Wireless communications learnings from way back when to really understand the difference between these 2 bands.
+
+- ✅ : Performs better
+- ❌ : Performs worse
+
+| Feature                                    | 2.4 GHz | 5 GHz |
+| ------------------------------------------ | ------- | ----- |
+| 📶 Range                                   | ✅      | ❌    |
+| 💨 Speed                                   | ❌      | ✅    |
+| 🏔 Affected by obstructions                | ❌      | ✅    |
+| 💥 Affected by interference                | ✅      | ❌    |
+| 📱 Connected devices(number of "channels") | ❌      | ✅    |
+
+As mentioned [here](https://networkshardware.com/2-4ghz-vs-5ghz/), the easy way to remember this is
+
+> If the highest speed possible is what you are looking for when it comes to daily frequency and Wi-Fi transmission use, 5GHz is the best choice. However, if you want to be able to take your laptop out to the edge of your backyard and work there without being disturbed, the long-distance reach of 2.4GHz will suit your needs.
+
+Meanwhile the world keeps moving on. WiFi 6 and 7 are around the corner!
+
+> While all of this is happening, we are starting to see some new 6 GHz routers hit the market. 6 GHz has about the same max speed as 5 GHz but has a far more different "channel" topography compared to 5 GHz which means more devices can connect to the network with lesser congestion. Meanwhile, the IEEE expects to finalize Wi-Fi 7 specifications in early 2024, which will further expand Wi-Fi channel size (up to 320MHz per channel) to increase throughput and decrease interference. Early Wi-Fi 7 specification documents also point to a maximum data transfer rate somewhere between 40Gbps and 46Gbps, up from Wi-Fi 6's 9.6Gbps. Its a brave new world.
