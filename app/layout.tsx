@@ -64,6 +64,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <title>Arjun Rao</title>
+      <script
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id="924e4613-1c04-4ab6-bd81-28f16ddfb5a5"
+      ></script>
       <link rel="icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
