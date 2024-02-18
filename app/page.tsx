@@ -25,7 +25,9 @@ export default async function Home() {
                 priority={true}
               />
             )}
-            <h3 className="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
+            <h3 className="prose prose-stone pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight dark:prose-invert">
+              {name}
+            </h3>
             <div className="prose prose-stone dark:prose-invert">{occupation}</div>
             <div className="prose prose-stone dark:prose-invert">{company}</div>
             <div className="flex space-x-3 pt-6">
