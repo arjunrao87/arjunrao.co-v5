@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
-import Script from 'next/script'
+import Head from 'next/head'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -63,17 +63,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      <title>Arjun Rao</title>
-      <Script
-        defer
-        src="https://cloud.umami.is/script.js"
-        data-website-id="924e4613-1c04-4ab6-bd81-28f16ddfb5a5"
-      ></Script>
-      <link rel="icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
-      <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <Head>
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="924e4613-1c04-4ab6-bd81-28f16ddfb5a5"
+        ></script>
+        <title>Arjun Rao</title>
+        <link rel="icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      </Head>
       <body className="bg-stone-100 text-black antialiased dark:bg-stone-800 dark:text-stone-100">
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
