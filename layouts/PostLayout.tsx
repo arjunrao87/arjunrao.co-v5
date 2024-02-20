@@ -23,6 +23,9 @@ interface LayoutProps {
 
 export default function PostLayout({ content, next, prev, children }: LayoutProps) {
   const { date, title } = content
+  const passedDate = new Date(date)
+  const utcCurrentDate = new Date(passedDate.getTime() + passedDate.getTimezoneOffset() * 60000)
+  const humanReadableDate = utcCurrentDate.toLocaleDateString('en-us', postDateTemplate)
 
   return (
     <SectionContainer>
@@ -35,9 +38,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
                 <div>
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>
-                      {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
-                    </time>
+                    {humanReadableDate}
                   </dd>
                 </div>
               </dl>
