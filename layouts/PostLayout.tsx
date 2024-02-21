@@ -25,7 +25,10 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
   const { date, title } = content
   const passedDate = new Date(date)
   const utcCurrentDate = new Date(passedDate.getTime() + passedDate.getTimezoneOffset() * 60000)
-  const humanReadableDate = utcCurrentDate.toLocaleDateString('en-us', postDateTemplate)
+  const humanReadableDate = utcCurrentDate.toLocaleDateString(
+    siteMetadata.language,
+    postDateTemplate
+  )
 
   return (
     <SectionContainer>

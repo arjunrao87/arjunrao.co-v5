@@ -24,6 +24,6 @@
 - [x] Cutover with arjunrao.co
 - [x] Fix iphone/mobile text to be same as desktop
 - [x] Put arjunrao in the post header
+- [x] Center the images in the blog posts
 - [ ] Fix first load of ModeToggle in iphone
-- [ ] Center the images in the blog posts
 - [ ] add newsletter
