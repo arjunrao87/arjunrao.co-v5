@@ -75,6 +75,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+        <script
+          data-goatcounter="https://arjunraov5.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+        ></script>
       </Head>
       <body className="bg-stone-100 text-black antialiased dark:bg-stone-800 dark:text-stone-100">
         <ThemeProviders>
