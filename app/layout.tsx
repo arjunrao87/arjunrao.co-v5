@@ -1,4 +1,5 @@
 import 'css/tailwind.css'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 import { Inter } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="//gc.zgo.at/count.js"
         ></Script>
         <ThemeProviders>
+          <GoogleTagManager gtmId="G-29Z9K4REX1" />
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
             <div className="flex h-screen flex-col justify-between font-sans">
