@@ -64,16 +64,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      <Script
-        defer
-        src="https://cloud.umami.is/script.js"
-        data-website-id="924e4613-1c04-4ab6-bd81-28f16ddfb5a5"
-      ></Script>
-      <Script
-        data-goatcounter="https://arjunraov5.goatcounter.com/count"
-        async
-        src="//gc.zgo.at/count.js"
-      ></Script>
       <Head>
         <title>Arjun Rao</title>
         <link rel="icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
@@ -85,6 +75,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-stone-100 text-black antialiased dark:bg-stone-800 dark:text-stone-100">
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
+          <Script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="924e4613-1c04-4ab6-bd81-28f16ddfb5a5"
+          ></Script>
+          <Script
+            data-goatcounter="https://arjunraov5.goatcounter.com/count"
+            async
+            src="//gc.zgo.at/count.js"
+          ></Script>
           <SectionContainer>
             <div className="flex h-screen flex-col justify-between font-sans">
               <Header />
