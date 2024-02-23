@@ -9,6 +9,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import Head from 'next/head'
+import Script from 'next/script'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -63,23 +64,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} scroll-smooth`}
       suppressHydrationWarning
     >
+      <Script
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id="924e4613-1c04-4ab6-bd81-28f16ddfb5a5"
+      ></Script>
+      <Script
+        data-goatcounter="https://arjunraov5.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js"
+      ></Script>
       <Head>
-        <script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="924e4613-1c04-4ab6-bd81-28f16ddfb5a5"
-        ></script>
         <title>Arjun Rao</title>
         <link rel="icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-        <script
-          data-goatcounter="https://arjunraov5.goatcounter.com/count"
-          async
-          src="//gc.zgo.at/count.js"
-        ></script>
       </Head>
       <body className="bg-stone-100 text-black antialiased dark:bg-stone-800 dark:text-stone-100">
         <ThemeProviders>
