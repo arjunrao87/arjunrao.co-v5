@@ -9,7 +9,6 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
-import Head from 'next/head'
 import Script from 'next/script'
 
 const inter = Inter({
