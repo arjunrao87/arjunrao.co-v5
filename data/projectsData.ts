@@ -7,6 +7,12 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    title: 'Silicon Juice',
+    description: `Searchable database of venture capital activity in the Valley!`,
+    imgSrc: '/static/images/siliconjuice.png',
+    href: 'https://siliconjuice.netlify.app/',
+  },
+  {
     title: 'Hourly',
     description: `Hourly helps you decide whether you should undertake a task on your own or outsource it to someone else.`,
     imgSrc: '/static/images/hourly.webp',
