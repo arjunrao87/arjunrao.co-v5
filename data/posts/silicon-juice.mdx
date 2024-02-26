@@ -1,0 +1,109 @@
+---
+title: 'Building Silicon Juice - The application to scour for venture capital activity'
+date: '2024-02-27'
+tags: ['hustle', 'building']
+draft: true
+summary: Inner workings of the build process
+---
+
+I am always curious about which companies attract venture funding. Besides indicating which companies are growing, it shows which sectors are being invested in. While services like Pitchbook and Crunchbase exist, sifting through them is hard. To address this, in part, I built Silicon Juice. 
+
+Silicon Juice is an application that lets you search for companies that have attracted investments. You can do this by slicing them across different facets such as funding round, category of investments etc. You can use Silicon Juice by going [here](https://siliconjuice.netlify.app/). If you liked using it, please subscribe using the form on the home page. 
+
+# Building Silicon Juice
+
+![](/static/images/siliconjuice-arch.png)
+
+Silicon Juice is fairly classic in its architecture, it has a backend and a frontend. The backend is built using Python and Beautiful Soup. It reads from the mailchimp newsletter archive of [Silicon.news](https://www.silicon.news) which is the primary datasource for the investment data provided. The application is containerized and the image is deployed the Github Container Registry(GHCR). The application is then executed on a cron schedule of 1x/week using Github actions, which is when it 
+- Reads the mailchimp newsletters (i.e. newsletters after the stored highwatermark)
+- Parses it using Beautiful Soup 
+- Extracts the key attributes and information related to the funding 
+- Upon failures, sends an email to the registered address using Mailgun
+- Upon success, writes the new records to Algolia 
+- Updates the highwatermark of the last newsletter that was processed.
+
+## Interesting tidbits 
+
+1. Human written newsletters have idiosyncracies or mistakes in their publications. Beautiful soup is a great tool for parsing html content, but these mistakes also lead to the parsing code having several edge cases and hard to grok. Unfortunately, this is the nature of processing any data file, as data engineers will be quick to point out. 
+
+2. Deployment included building an image and shipping it to GHCR. Execution included running the cron task 1x/week. These were set up as two independent Github actions. 
+
+3. It took a bit of elbow grease to get the GHCR integration working which likely was a result of my unfamiliarity. Ultimately there were 2 parts that were needed for the Github action to be correctly setup - 
+
+- Trigger to push image 
+
+```yaml
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+```
+
+- GHCR push 
+
+```yaml
+docker-push:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Log into GH registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GH_PAT }}
+      - name: Push to GHCR 
+        run: |
+          docker buildx build --push -t ghcr.io/${{ github.repository }}:latest .
+```
+4. The Github Action cron execution setup  was fairly straightforward (only relevant parts)
+
+```yaml
+jobs:
+  run_juice:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Log into GH registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GH_PAT }}
+
+      - name: Pull Docker image from GitHub Container Registry
+        run: docker pull ghcr.io/${{ github.repository }}:latest
+
+      - name: Run Docker container
+        run: |
+            # Run a new container from a new image
+            docker run \
+            -e ALGOLIA_APPLICATION_ID=${{ secrets.ALGOLIA_APPLICATION_ID }} \
+            -e ALGOLIA_API_KEY=${{ secrets.ALGOLIA_API_KEY }} \
+            -e MAILGUN_API_KEY=${{ secrets.MAILGUN_API_KEY }} \
+            -e MAILGUN_FROM=${{ secrets.MAILGUN_FROM }} \
+            -e MAILGUN_TO=${{ secrets.MAILGUN_TO }} \
+            -e MAILGUN_URL=${{ secrets.MAILGUN_URL }} \
+            --restart always \
+            --name $(echo $IMAGE_NAME) \
+            ghcr.io/${{ github.repository }}:latest
+```
+
+where `GH_PAT` is the Github Personal Access Token that you need to obtain from Github while setting up your application. For more details, see [this](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+
+The frontend is much simpler, and consists of a NextJS application built using TailwindCSS. Tailwind is an absolute godsend for people like me who could never write any useful CSS. While the internet is littered with how Tailwind is the absolute worst, I am a fan. The NextJS application uses Algolia's [InstantSearch components](https://www.algolia.com/doc/api-reference/widgets/instantsearch/react/) for building out the UI and borrows generously from [here](https://tailwindflex.com/@limaa-m/simple-landing-page) for the landing page. The two issues I have had with the frontend are 
+
+- embedding analytics (shoutout to goatcounter which I love) in NextJS has been unsuccessful in tracking non-homepage views 
+- the mobile views don't cover the entire width of the viewport which isn't great
+
+Neither of these are problematic enough for me to do anything about it, but if anyone has ideas, please give me a shoutout [@raoarjun](https://twitter.com/raoarjun)!
+
+# Closing out 
+
+Building Silicon Juice over a few weekends was quite a bit of fun. I learned a bunch of new things around Algolia integrations, landing pages, GHCR, and Mailgun shenanigans. For all its warts, this is a stack that actually plays together quite well and allows for rapidly building prototypes and SLC (definitely check [this](https://longform.asmartbear.com/slc/) out if you haven't heard of this) apps.
+
+As for the future of Silicon Juice itself? From a user standpoint, it is in autopilot for the moment. I will be using it for sifting through venture news and perhaps even add other data sources of venture activity, as and when I come across them. 
+
+Until then, onwards and upwards! 🚀
