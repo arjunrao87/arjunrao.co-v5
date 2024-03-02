@@ -25,5 +25,5 @@
 - [x] Fix iphone/mobile text to be same as desktop
 - [x] Put arjunrao in the post header
 - [x] Center the images in the blog posts
+- [x] add newsletter
 - [ ] Fix first load of ModeToggle in iphone
-- [ ] add newsletter
