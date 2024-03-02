@@ -37,10 +37,12 @@ export default function Projects() {
             height="320"
             frameBorder="0"
             scrolling="no"
+            title="newsletter"
             // style="border-radius: 4px; border: 2px solid #e5e7eb; margin: 0; background-color: transparent;"
             style={{
               margin: '0',
-              borderRadius: '0px',
+              border: '2px',
+              borderRadius: '4px',
               backgroundColor: 'transparent',
             }}
           ></iframe>
