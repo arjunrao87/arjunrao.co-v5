@@ -51,6 +51,7 @@ export default function Projects() {
               height="120"
               frameBorder="0"
               scrolling="no"
+              title="newsletter"
               style={{
                 margin: '0 auto',
                 border: '0px',
