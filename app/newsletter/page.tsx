@@ -1,22 +1,11 @@
-import projectsData from '@/data/projectsData'
-import Card from '@/components/Card'
 import { genPageMetadata } from 'app/seo'
 import Script from 'next/script'
 import Link from 'next/link'
+import NextImage from 'next/image'
 
-export const metadata = genPageMetadata({ title: 'Projects' })
-const ContentSecurityPolicy = `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
-    child-src 'self';
-    style-src 'self' 'unsafe-inline';
-    img-src * blob: data:;
-    media-src 'none';
-    connect-src *;
-    font-src 'self' data:;
-    frame-ancestors 'self' localhost:*;
-`
-export default function Projects() {
+export const metadata = genPageMetadata({ title: 'Newsletter' })
+
+export default function Newsletter() {
   return (
     <>
       <Script
@@ -31,27 +20,34 @@ export default function Projects() {
           </h1>
         </div>
         <div className="container items-center py-12 text-center">
-          <div className="prose prose-stone mx-auto px-6 pb-10 text-center dark:prose-invert">
-            <div className="text-2xl ">
+          <div className="prose prose-stone mx-auto px-6 pb-12 text-center dark:prose-invert">
+            <div className="flex items-center justify-center text-2xl">
+              <NextImage
+                src={'/static/images/sun.jpg'}
+                alt="avatar"
+                width={192}
+                height={192}
+                className="h-10 w-10 rounded-full"
+                priority={true}
+              />
               <Link
                 href="https://a1engineering.beehiiv.com/"
                 rel="noopener noreferrer"
                 target="_blank"
+                className="ml-2"
               >
-                {' '}
                 A1 Engineering
               </Link>
             </div>
-            <div> Thoughts on the best of engineering delivered 1x/week</div>
+            <div className="mt-0"> Thoughts on the best of engineering delivered 1x/week</div>
           </div>
           <div className="mx-auto" style={{ width: 'fit-content' }}>
             <iframe
-              src="https://embeds.beehiiv.com/0c54be49-aef8-4e1c-ae3d-d4c880d52aa4?slim=true"
+              src="https://embeds.beehiiv.com/fc827f8a-6f1f-441b-a15f-470d57921d43?slim=true"
               data-test-id="beehiiv-embed"
               height="120"
               frameBorder="0"
               scrolling="no"
-              title="newsletter"
               style={{
                 margin: '0 auto',
                 border: '0px',
