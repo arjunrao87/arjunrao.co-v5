@@ -53,8 +53,8 @@ export default async function Home() {
               </li>
               <li> In my spare time, I mentor Engineers and Engineering leaders.</li>
               <li>
-                I like to talk about personal finance, crypto, travel, FIRE, real estate, new
-                startup ideas, space, whales (this kind {'>'} 🐋 🐳) and fun facts.
+                I like to talk about personal finance, crypto, travel, FIRE, eating healthy, real
+                estate, new startup ideas, space, whales (this kind {'>'} 🐋 🐳) and fun facts.
               </li>
             </ul>
           </div>
