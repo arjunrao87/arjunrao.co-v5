@@ -46,6 +46,7 @@ export default function Newsletter() {
               src="https://embeds.beehiiv.com/fc827f8a-6f1f-441b-a15f-470d57921d43?slim=true"
               data-test-id="beehiiv-embed"
               height="120"
+              title="newsletter"
               frameBorder="0"
               scrolling="no"
               style={{
