@@ -1,0 +1,49 @@
+---
+title: 'Highlights from Stripe's annual 2023 letter'
+date: '2024-03-20'
+tags: ['technology', 'entrepreneurship', 'engineering', 'environment']
+draft: false
+summary: Learnings from the world's largest financial payment processor
+---
+
+[Stripe](https://stripe.com/) published its 2023 annual letter last week. Much like the previous edition it was filled with a lot of interesting nuggets. Stripe has a strong history of being fairly transparent with its practices. These range from engineering challenges through its blogs as well as thought leadership in the financial and entrepreneurship space. I personally like the writing style of this letter as it doesn’t seem corporate or stuffy. Instead it is filled with humorous anecdotes,  quirky observations and intelligent historical narratives which make it a compelling read. You can read the letter here → [Stripe Annual Letter: 2023](https://stripe.com/annual-updates/2023)
+
+A few things that I found particularly interesting from the letter have been broken down into 3 broad categories -
+
+[1. Financial growth](#1-financial-growth)
+[2. Environmental reflections](#2-environmental-reflections)
+[3. Engineering scale](#3-engineering-scale)
+
+## 1. Financial growth 
+
+- Stripe passed the milestone of $1 trillion (roughly 1% of global GDP) in total payment volume in 2023, up 25% from the prior year.
+- The average tenure of a company’s inclusion in the S&P 500 index has been shrinking over the past few decades: it was 61 years in 1958 and now sits at 18 years.
+- Startups founded in 2022, the most recent year where we have a full year of analyzable data, are 60% more likely to start collecting revenue within their first year, and 57% more likely to process $1 million within their first year, than those founded in 2019.
+- During Black Friday / Cyber Monday 2023 (BFCM), the highest-load part of any year, Stripe maintained uptime in excess of 99.999% while processing more than 300 million transactions. Total BFCM volume was $18.6 billion. 
+
+![](/static/images/stripe-atlas.png)
+
+## 2. Environmental reflections
+
+- Today, one in six new Delaware corporations incorporates with Stripe Atlas.
+- Twice as many AI companies went live on Stripe compared to 2022, including new trailblazers like Perplexity and Mistral.
+- The world deployed 444 GW of solar energy last year, which is greater than all the nuclear grid capacity in the world today. In the US, this translated to around half of all new capacity added to the grid coming from solar.
+- Texas deployed more solar than California last year.
+- Due to their worse combustion than a four-stroke car engine, a single hour of operating a gas-powered mower produces the same amount of smog-forming pollution as driving a gas-powered car 300 miles.
+
+![](/static/images/stripe-env.png)
+
+## 3. Engineering scale 
+
+- New code gets deployed at Stripe to one of the core API services approximately 400 times in a typical day.
+- Once a change is code-complete, it is evaluated by a battery of around 1.4 million tests. 
+- Stripe uses half a million CPU cores to execute more than 6 billion test runs each day.
+- Changes first go to pre-production, a mock production environment with synthetic API traffic designed to mimic realistic integration patterns
+- Following this, the change then rolls out to a single production machine with a small sliver of traffic, before gradually advancing to 0.5%, then 1%, then 5%, then 20%, and so on, of actual production traffic—with pauses along the way to observe the effects. 
+- Each progressive rollout is inspected against 55,000 different metrics. If at any moment the system detects anomalous telemetry, the machines running the new code are automatically withdrawn from the pool and traffic is redirected to machines running an older, known-good version.
+- Through automated monitoring, Stripe aims to detect as many incidents as possible, and their systems can automatically remediate many incidents by invoking redundant rails or enabling emergency fallback capabilities. 
+- On average, 520 calls per day go out to Stripe staff to look at a possible incident.
+- Stripe has a 99.999% uptime (past 90 days). 
+- Their most significant issue, YTD 2024, took only 6 minutes to fix.
+
+From an engineering standpoint, these are clearly very high numbers to deal with. Building testability, observability, and automated incident management at this kind of scale is not a trivial task. While we can’t say how things work from an operator’s perspective, from a user’s standpoint it clearly makes the platform a joy to use. Ultimately, as engineers, that is what we are all aiming for. Nicely done, Stripe 🙌 
