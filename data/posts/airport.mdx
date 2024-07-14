@@ -1,0 +1,40 @@
+---
+title: 'How airport design mirrors software design'
+date: '2024-06-15'
+tags: ['growth']
+draft: false
+summary: A look into Tampa's approach to handling passenger volume
+---
+![](/static/images/airport.jpeg)
+
+When I flew out of Tampa airport (TPA), I was impressed by the layout of the airport. From a passenger’s viewpoint, there are many aspects of running an efficient airport, starting from how you arrive at the airport, all the way to how the boarding process is executed, and TPA nailed most of it. 
+
+## How Tampa Airport is organized
+
+When you enter Tampa airport by car, you have an option to go into the “Express” lane if you don’t have any bags to check in which takes you to a separate area compared to if you had bags to check in. For domestic flights, this is an intuitive optimization since it likely splits the crowd into something like 60% (carry-on) and 40% (bag checkin), which reduces the stress on the infrastructure. 
+
+Once you enter the airport building itself, it follows a “hub and spoke” model, where the main area splits off into different terminals based on the flights you are taking. There is no security check in this main area.
+
+![](/static/images/airport2.png)
+
+You just need to scan your boarding pass at the corresponding “spoke” where your flight is supposed to depart. Once you scan the boarding pass, you hop on a very short shuttle ride that takes you to your designated terminal. Its only after you get off that shuttle that you are required to go through security check. 
+
+Since there are 4 terminals in the airport, that basically splits the traffic for security checks into ~25% chunks, reducing the load fairly drastically on the security process. While it does mean that Tampa airport needs to pay more for extra staff and scanning equipment, it results in a drastically better security checkin process.
+
+## Tampa vs NYC airports by volume
+
+My initial assumption was that the NYC airports are handling orders of magnitude more passengers than TPA. However, after some quick research I found that for 2021 the passengers handled by these airports are 
+
+- **TPA**: 16.8 million annual passengers
+- **JFK**: 29 million annual passengers
+- **LGA**: 15.6 million annual passengers
+
+JFK being about two times TPA volumes was well under what I had expected, and LGA handling fewer passengers than TPA was definitely unexpected. 
+
+## Parallels with designing software systems at scale
+
+There are many similarities between managing airport checkin traffic and queue management in real time streaming systems. After all, airport checkins are similar to website logins :). The tradeoffs of cost v/s complexity should decide what the right approach should be. Centralized airport checkins have been the norm of air travel since the beginning, so having Tampa try the decentralized queueing model feels very innovative, even though the fundamental concepts of these have existed in system design for a long time.
+
+While this is the route that TPA is taking, NYC airports are spending their resources to reduce the time to process an individual by having programs like TSA-Pre and Digital ID being pushed more aggressively. It can be argued that adding more queues to process passengers papers over core inefficiencies that might be worth dealing with first. Maybe having a lower mean-time-to-process a passenger is a better goal than sticking a bunch of passenger queues into your setup? Although that is purely conjecture based on my software engineering experience, and might require some actual research. 
+
+Ultimately, everything is function of supply and demand. As air travel continues to increase in demand, it will be interesting to see how airports continue to innovate to solve the demands of passenger scale. 
