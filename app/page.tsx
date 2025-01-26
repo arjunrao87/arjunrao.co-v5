@@ -5,8 +5,8 @@ import NextImage from 'next/image'
 export default async function Home() {
   const name = 'Arjun Rao'
   const avatar = '/static/images/arjun.webp'
-  const occupation = 'VP of Engineering'
-  const company = 'Place Exchange'
+  const occupation = 'Head of Engineering, Catalog'
+  const company = 'StubHub'
   const twitter = 'https://twitter.com/raoarjun'
   const linkedin = 'https://www.linkedin.com/in/arjunrao87/'
   const github = 'https://github.com/arjunrao87'
@@ -40,21 +40,16 @@ export default async function Home() {
             <p>Hi, I am Arjun Rao!</p>
             <ul>
               <li>
-                VP of Engineering at{' '}
-                <Link
-                  href="https://www.placeexchange.com/about"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Place Exchange
-                </Link>
-                , an adtech startup in New York City. Previously at BlackRock, Harris Corporation,
-                Rutgers University.
+                I lead the Catalog Engineering team at StubHub that is responsible for data related
+                to all live events in the world!
               </li>
-              <li> In my spare time, I mentor Engineers and Engineering leaders.</li>
               <li>
-                I like to talk about personal finance, crypto, travel, FIRE, eating healthy, real
-                estate, new startup ideas, space, whales (this kind {'>'} 🐋 🐳) and fun facts.
+                Previously I was SVP of Engineering at Place Exchange. Prior to that I was at
+                BlackRock, Harris Corporation and Rutgers University.
+              </li>
+              <li>
+                I like to talk about personal finance, crypto, travel, FIRE, eating healthy, new
+                startup ideas, space, whales (this kind {'>'} 🐋 🐳) and fun facts.
               </li>
             </ul>
           </div>

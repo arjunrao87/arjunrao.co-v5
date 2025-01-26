@@ -31,7 +31,7 @@ export default function Newsletter() {
                 priority={true}
               />
               <Link
-                href="https://a1engineering.beehiiv.com/"
+                href="https://a1engineering.substack.com/"
                 rel="noopener noreferrer"
                 target="_blank"
                 className="ml-2"
@@ -39,7 +39,10 @@ export default function Newsletter() {
                 A1 Engineering
               </Link>
             </div>
-            <div className="mt-0"> Thoughts on the best of engineering delivered 1x/week</div>
+            <div className="mt-0">
+              {' '}
+              Thoughts on the best of engineering delivered every so often
+            </div>
           </div>
           <div className="mx-auto" style={{ width: 'fit-content' }}>
             <iframe
