@@ -29,7 +29,11 @@ export default async function Home() {
               {name}
             </h3>
             <div className="prose prose-stone dark:prose-invert">{occupation}</div>
-            <div className="prose prose-stone dark:prose-invert"><a href="https://www.stubhub.com/" target="_blank">{company}</a></div>
+            <div className="prose prose-stone dark:prose-invert">
+              <a href="https://www.stubhub.com/" target="_blank">
+                {company}
+              </a>
+            </div>
             <div className="flex space-x-3 pt-6">
               <SocialIcon kind="github" href={github} />
               <SocialIcon kind="linkedin" href={linkedin} />
@@ -39,10 +43,12 @@ export default async function Home() {
             <p>👋 I am Arjun Rao!</p>
             <ul>
               <li>
-                I lead the Selection teams at StubHub that are responsible for creating the world’s best event and ticket selection experience for live events!
+                I lead the Selection teams at StubHub that are responsible for creating the world’s
+                best event and ticket selection experience for live events!
               </li>
               <li>
-                Previously I was SVP of Engineering at Place Exchange and VP of Engineering at BlackRock.
+                Previously I was SVP of Engineering at Place Exchange and VP of Engineering at
+                BlackRock.
               </li>
             </ul>
           </div>
