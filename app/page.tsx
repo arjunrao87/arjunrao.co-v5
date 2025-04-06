@@ -5,7 +5,7 @@ import NextImage from 'next/image'
 export default async function Home() {
   const name = 'Arjun Rao'
   const avatar = '/static/images/arjun.webp'
-  const occupation = 'Head of Engineering, Catalog'
+  const occupation = 'Director of Engineering, Selection'
   const company = 'StubHub'
   const twitter = 'https://twitter.com/raoarjun'
   const linkedin = 'https://www.linkedin.com/in/arjunrao87/'
@@ -29,27 +29,20 @@ export default async function Home() {
               {name}
             </h3>
             <div className="prose prose-stone dark:prose-invert">{occupation}</div>
-            <div className="prose prose-stone dark:prose-invert">{company}</div>
+            <div className="prose prose-stone dark:prose-invert"><a href="https://www.stubhub.com/" target="_blank">{company}</a></div>
             <div className="flex space-x-3 pt-6">
               <SocialIcon kind="github" href={github} />
               <SocialIcon kind="linkedin" href={linkedin} />
-              <SocialIcon kind="twitter" href={twitter} />
             </div>
           </div>
           <div className="prose prose-stone max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
-            <p>Hi, I am Arjun Rao!</p>
+            <p>👋 I am Arjun Rao!</p>
             <ul>
               <li>
-                I lead the Catalog Engineering team at StubHub that is responsible for data related
-                to all live events in the world!
+                I lead the Selection teams at StubHub that are responsible for creating the world’s best event and ticket selection experience for live events!
               </li>
               <li>
-                Previously I was SVP of Engineering at Place Exchange. Prior to that I was at
-                BlackRock, Harris Corporation and Rutgers University.
-              </li>
-              <li>
-                I like to talk about personal finance, crypto, travel, FIRE, eating healthy, new
-                startup ideas, space, whales (this kind {'>'} 🐋 🐳) and fun facts.
+                Previously I was SVP of Engineering at Place Exchange and VP of Engineering at BlackRock.
               </li>
             </ul>
           </div>
