@@ -8,7 +8,7 @@ import { allPosts, allAuthors } from 'contentlayer/generated'
 import type { Authors, Post } from 'contentlayer/generated'
 import PostLayout from '@/layouts/PostLayout'
 import { Metadata } from 'next'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.cjs'
 import { notFound } from 'next/navigation'
 
 export async function generateMetadata({

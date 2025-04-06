@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 import { allPosts } from 'contentlayer/generated'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.cjs'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = siteMetadata.siteUrl

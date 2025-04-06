@@ -3,7 +3,7 @@ import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Post, Authors } from 'contentlayer/generated'
 import Link from '@/components/Link'
 import SectionContainer from '@/components/SectionContainer'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.cjs'
 import ScrollTop from '@/components/ScrollTopAndComment'
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
