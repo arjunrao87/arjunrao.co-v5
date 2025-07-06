@@ -1,5 +1,63 @@
 # arjunrao.co-v5 [![Netlify Status](https://api.netlify.com/api/v1/badges/c45b7d4b-618e-4cdc-8b61-9ee948baaae2/deploy-status)](https://app.netlify.com/sites/arjunraov5/deploys)
 
+A Next.js 14 personal blog/portfolio site built with TypeScript, Tailwind CSS, and MDX for content management.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18.17 or later
+- Yarn package manager
+
+### Installation
+
+1. **Install Yarn (if not already installed)**
+   ```bash
+   # Install Yarn globally via npm
+   npm install -g yarn
+
+   # Or install via Homebrew on macOS
+   brew install yarn
+
+   # Verify installation
+   yarn --version
+   ```
+
+2. **Clone and setup the project**
+   ```bash
+   git clone https://github.com/arjunrao87/arjunrao.co-v5.git
+   cd arjunrao.co-v5
+
+   # Install dependencies
+   yarn install
+
+   # Start development server
+   yarn dev
+   ```
+
+3. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the site.
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory and add:
+
+```env
+NEXT_UMAMI_ID=your_umami_website_id
+NEXT_PUBLIC_GISCUS_REPO=your_github_repo
+NEXT_PUBLIC_GISCUS_REPOSITORY_ID=your_repo_id
+NEXT_PUBLIC_GISCUS_CATEGORY=your_category
+NEXT_PUBLIC_GISCUS_CATEGORY_ID=your_category_id
+```
+
+### Available Scripts
+
+- `yarn dev` - Start development server
+- `yarn build` - Build for production
+- `yarn start` - Start production server
+- `yarn lint` - Run ESLint with auto-fix
+- `yarn analyze` - Build with bundle analyzer
+
 ## TODOs
 
 - [x] Rename blog -> posts
