@@ -12,7 +12,7 @@ export default async function Home() {
   const github = 'https://github.com/arjunrao87'
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="divide-y divide-slate-200 dark:divide-slate-700">
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center space-x-2 pt-8">
             {avatar && (
@@ -25,12 +25,12 @@ export default async function Home() {
                 priority={true}
               />
             )}
-            <h3 className="prose prose-stone pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight dark:prose-invert">
+            <h3 className="prose prose-stone pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight dark:prose-invert">
               {name}
             </h3>
-            <div className="prose prose-stone dark:prose-invert">{occupation}</div>
-            <div className="prose prose-stone dark:prose-invert">
-              <a href="https://www.stubhub.com/" target="_blank">
+            <div className="prose prose-stone text-lg font-medium text-slate-700 dark:text-slate-300 dark:prose-invert">{occupation}</div>
+            <div className="prose prose-stone text-lg font-medium dark:prose-invert">
+              <a href="https://www.stubhub.com/" target="_blank" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
                 {company}
               </a>
             </div>
@@ -40,17 +40,17 @@ export default async function Home() {
             </div>
           </div>
           <div className="prose prose-stone max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
-            <p>👋 I am Arjun Rao!</p>
-            <ul>
-              <li>
-                I lead the Selection teams at StubHub that are responsible for creating the world’s
+            <p className="text-xl font-medium text-slate-900 dark:text-slate-100 mb-6">👋 I am Arjun Rao!</p>
+            <div className="space-y-4">
+              <p className="text-lg leading-7 text-slate-700 dark:text-slate-300">
+                I lead the Selection teams at StubHub that are responsible for creating the world's
                 best event and ticket selection experience for live events!
-              </li>
-              <li>
+              </p>
+              <p className="text-lg leading-7 text-slate-700 dark:text-slate-300">
                 Previously I was SVP of Engineering at Place Exchange and VP of Engineering at
                 BlackRock.
-              </li>
-            </ul>
+              </p>
+            </div>
           </div>
         </div>
       </div>
