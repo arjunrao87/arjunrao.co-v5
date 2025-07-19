@@ -6,12 +6,12 @@ import { ModeToggle } from './ModeToggle'
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between py-10 ">
+    <header className="flex items-center justify-between py-10 border-b border-slate-200/50 dark:border-slate-700/50">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
             {typeof siteMetadata.headerTitle === 'string' ? (
-              <div className="h-6 text-2xl font-semibold sm:block">{siteMetadata.headerTitle}</div>
+              <div className="h-6 text-2xl font-bold sm:block">{siteMetadata.headerTitle}</div>
             ) : (
               siteMetadata.headerTitle
             )}
@@ -25,7 +25,7 @@ const Header = () => {
             <Link
               key={link.title}
               href={link.href}
-              className="hidden font-medium text-gray-900 dark:text-gray-100 sm:block"
+              className="hidden font-semibold text-gray-900 dark:text-gray-100 sm:block hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               {link.title}
             </Link>
