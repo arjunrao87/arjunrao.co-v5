@@ -1,8 +1,9 @@
 import { defineDocumentType, ComputedFields, makeSource } from 'contentlayer/source-files'
-import { writeFileSync } from 'fs'
+import { writeFileSync, readFileSync } from 'fs'
 import readingTime from 'reading-time'
 import { slug } from 'github-slugger'
 import path from 'path'
+import { glob } from 'glob'
 // Remark packages
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
@@ -118,5 +119,34 @@ export default makeSource({
   },
   onSuccess: async (importData) => {
     const { allPosts } = await importData()
+    
+    // Fix Node.js v23+ compatibility: replace 'assert' with 'with' in import assertions
+    console.log('🔧 Fixing Contentlayer import assertions for Node.js v23+ compatibility...')
+    try {
+      const pattern = path.join(root, '.contentlayer/generated/**/*.mjs')
+      const files = await glob(pattern)
+      
+      let filesFixed = 0
+      
+      for (const file of files) {
+        const content = readFileSync(file, 'utf8')
+        const fixedContent = content.replace(
+          /assert\s*\{\s*type:\s*['"]json['"]\s*\}/g,
+          "with { type: 'json' }"
+        )
+        
+        if (fixedContent !== content) {
+          writeFileSync(file, fixedContent, 'utf8')
+          console.log(`✅ Fixed: ${file}`)
+          filesFixed++
+        }
+      }
+      
+      if (filesFixed > 0) {
+        console.log(`🎉 Successfully fixed ${filesFixed} file(s) for Node.js compatibility`)
+      }
+    } catch (error) {
+      console.error('❌ Error fixing import assertions:', error)
+    }
   },
 })

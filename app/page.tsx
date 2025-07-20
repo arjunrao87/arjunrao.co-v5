@@ -28,9 +28,15 @@ export default async function Home() {
             <h3 className="prose prose-stone pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight dark:prose-invert">
               {name}
             </h3>
-            <div className="prose prose-stone text-lg font-medium text-slate-700 dark:text-slate-300 dark:prose-invert">{occupation}</div>
+            <div className="prose prose-stone text-lg font-medium text-slate-700 dark:prose-invert dark:text-slate-300">
+              {occupation}
+            </div>
             <div className="prose prose-stone text-lg font-medium dark:prose-invert">
-              <a href="https://www.stubhub.com/" target="_blank" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors">
+              <a
+                href="https://www.stubhub.com/"
+                target="_blank"
+                className="text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+              >
                 {company}
               </a>
             </div>
@@ -40,7 +46,9 @@ export default async function Home() {
             </div>
           </div>
           <div className="prose prose-stone max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
-            <p className="text-xl font-medium text-slate-900 dark:text-slate-100 mb-6">👋 I am Arjun Rao!</p>
+            <p className="mb-6 text-xl font-medium text-slate-900 dark:text-slate-100">
+              👋 I am Arjun Rao!
+            </p>
             <div className="space-y-4">
               <p className="text-lg leading-7 text-slate-700 dark:text-slate-300">
                 I lead the Selection teams at StubHub that are responsible for creating the world's

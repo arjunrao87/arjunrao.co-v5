@@ -6,7 +6,7 @@ import { ModeToggle } from './ModeToggle'
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between py-10 border-b border-slate-200/50 dark:border-slate-700/50">
+    <header className="flex items-center justify-between border-b border-slate-200/50 py-10 dark:border-slate-700/50">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
@@ -25,7 +25,7 @@ const Header = () => {
             <Link
               key={link.title}
               href={link.href}
-              className="hidden font-semibold text-gray-900 dark:text-gray-100 sm:block hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              className="hidden font-semibold text-gray-900 transition-colors hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400 sm:block"
             >
               {link.title}
             </Link>
