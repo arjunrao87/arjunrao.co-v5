@@ -4,6 +4,7 @@ date: '2024-02-28'
 tags: ['hustle', 'building']
 draft: false
 summary: Inner workings of the build process
+images: ['/static/images/siliconjuice-arch.png']
 ---
 
 I am always curious about which companies attract venture funding. Besides indicating which companies are growing, it shows which sectors are being invested in. While services like Pitchbook and Crunchbase exist, sifting through them is hard. To address this, in part, I built Silicon Juice.
@@ -11,8 +12,6 @@ I am always curious about which companies attract venture funding. Besides indic
 Silicon Juice is an application that lets you search for companies that have attracted investments. You can do this by slicing them across different facets such as funding round, category of investments etc. You can use Silicon Juice by going [here](https://siliconjuice.netlify.app/). If you liked using it, please subscribe using the form on the home page.
 
 # Building Silicon Juice
-
-![](/static/images/siliconjuice-arch.png)
 
 Silicon Juice is fairly classic in its architecture, it has a backend and a frontend. The backend is built using Python and Beautiful Soup. It reads from the mailchimp newsletter archive of [Silicon.news](https://www.silicon.news) which is the primary datasource for the investment data provided. The application is containerized and the image is deployed the Github Container Registry(GHCR). The application is then executed on a cron schedule of 1x/week using Github actions, which is when it
 
