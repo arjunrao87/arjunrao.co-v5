@@ -1,5 +1,7 @@
 import { defineCollection, defineConfig } from '@content-collections/core'
 import { z } from 'zod'
+// import { extractTocHeadings } from './lib/extractTocHeadings'
+import readingTime from 'reading-time'
 
 const posts = defineCollection({
   name: 'posts',
@@ -20,6 +22,8 @@ const posts = defineCollection({
   }),
   transform: (document, context) => {
     const slug = document._meta.path.replace(/^.+?(\/)/, '')
+    // const toc = extractTocHeadings(document.content)
+    const readingTimeResult = readingTime(document.content)
 
     return {
       title: document.title,
@@ -34,13 +38,19 @@ const posts = defineCollection({
       bibliography: document.bibliography,
       canonicalUrl: document.canonicalUrl,
       content: document.content,
-      _meta: document._meta,
       _id: document._meta.filePath,
       _raw: { flattenedPath: document._meta.path },
       body: { raw: document.content, code: document.content },
       slug: slug,
       path: `posts/${slug}`,
       filePath: document._meta.filePath,
+      toc: [],
+      readingTime: {
+        text: readingTimeResult.text,
+        minutes: readingTimeResult.minutes,
+        time: readingTimeResult.time,
+        words: readingTimeResult.words,
+      },
       structuredData: {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
@@ -84,7 +94,6 @@ const authors = defineCollection({
       github: document.github,
       layout: document.layout,
       content: document.content,
-      _meta: document._meta,
       _id: document._meta.filePath,
       _raw: { flattenedPath: document._meta.path },
       body: { raw: document.content, code: document.content },

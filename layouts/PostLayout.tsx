@@ -55,13 +55,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
           </header>
           {images && images.length > 0 && (
             <div className="relative mb-8 h-48 w-full overflow-hidden rounded-lg">
-              <Image
-                src={images[0]}
-                alt={title}
-                fill
-                className="object-cover"
-                priority
-              />
+              <Image src={images[0]} alt={title} fill className="object-cover" priority />
             </div>
           )}
           <div className="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:gap-x-6 xl:divide-y-0">

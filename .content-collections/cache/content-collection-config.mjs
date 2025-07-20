@@ -1,6 +1,7 @@
 // content-collections.ts
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { z } from "zod";
+import readingTime from "reading-time";
 var posts = defineCollection({
   name: "posts",
   directory: "data/posts",
@@ -20,6 +21,7 @@ var posts = defineCollection({
   }),
   transform: (document, context) => {
     const slug = document._meta.path.replace(/^.+?(\/)/, "");
+    const readingTimeResult = readingTime(document.content);
     return {
       title: document.title,
       date: document.date.toISOString(),
@@ -33,13 +35,19 @@ var posts = defineCollection({
       bibliography: document.bibliography,
       canonicalUrl: document.canonicalUrl,
       content: document.content,
-      _meta: document._meta,
       _id: document._meta.filePath,
       _raw: { flattenedPath: document._meta.path },
       body: { raw: document.content, code: document.content },
       slug,
       path: `posts/${slug}`,
       filePath: document._meta.filePath,
+      toc: [],
+      readingTime: {
+        text: readingTimeResult.text,
+        minutes: readingTimeResult.minutes,
+        time: readingTimeResult.time,
+        words: readingTimeResult.words
+      },
       structuredData: {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -81,7 +89,6 @@ var authors = defineCollection({
       github: document.github,
       layout: document.layout,
       content: document.content,
-      _meta: document._meta,
       _id: document._meta.filePath,
       _raw: { flattenedPath: document._meta.path },
       body: { raw: document.content, code: document.content },
