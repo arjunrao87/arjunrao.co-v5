@@ -1,7 +1,7 @@
 import 'css/tailwind.css'
 import { GoogleTagManager } from '@next/third-parties/google'
 
-import { Inter } from 'next/font/google'
+import { Outfit } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import Header from '@/components/Header'
 import SectionContainer from '@/components/SectionContainer'
@@ -11,10 +11,10 @@ import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import Script from 'next/script'
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-space-inter',
+  variable: '--font-outfit',
 })
 
 export const metadata: Metadata = {
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang={siteMetadata.language}
-      className={`${inter.variable} scroll-smooth`}
+      className={`${outfit.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <link rel="icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
