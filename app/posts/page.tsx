@@ -1,6 +1,6 @@
 import ListLayout from '@/layouts/ListLayoutPerPage'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
-import { allPosts } from 'contentlayer/generated'
+import { allPosts } from '@/.content-collections/generated'
 import { genPageMetadata } from 'app/seo'
 
 const POSTS_PER_PAGE = 10

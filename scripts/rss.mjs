@@ -3,7 +3,7 @@ import path from 'path'
 import { slug } from 'github-slugger'
 import { escape } from 'pliny/utils/htmlEscaper.js'
 import siteMetadata from '../data/siteMetadata.js'
-import { allPosts } from '../.contentlayer/generated/index.mjs'
+import { allPosts } from '../.content-collections/generated/index.js'
 import { sortPosts } from 'pliny/utils/contentlayer.js'
 
 const generateRssItem = (config, post) => `

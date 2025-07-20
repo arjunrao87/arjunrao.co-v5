@@ -3,7 +3,7 @@
 
 import { usePathname } from 'next/navigation'
 import { CoreContent } from 'pliny/utils/contentlayer'
-import type { Post } from 'contentlayer/generated'
+import type { Post } from '@/.content-collections/generated'
 import Link from '@/components/Link'
 
 interface PaginationProps {
@@ -80,7 +80,10 @@ export default function ListLayoutPerPage({
                       <div className="space-y-3 ">
                         <div>
                           <h2 className="text-2xl leading-8 tracking-tight ">
-                            <Link href={`/${path}`} className="text-gray-900 transition-colors hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400">
+                            <Link
+                              href={`/${path}`}
+                              className="text-gray-900 transition-colors hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+                            >
                               {title}
                             </Link>
                           </h2>
