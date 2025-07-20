@@ -69,11 +69,6 @@ export default function ListLayoutPerPage({
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="prose prose-stone  text-3xl leading-9 tracking-tight dark:prose-invert sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
-            {title}
-          </h1>
-        </div>
         <div className="flex sm:space-x-24">
           <div className="mx-auto px-6 text-center ">
             <ul>
@@ -85,7 +80,7 @@ export default function ListLayoutPerPage({
                       <div className="space-y-3 ">
                         <div>
                           <h2 className="text-2xl leading-8 tracking-tight ">
-                            <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
+                            <Link href={`/${path}`} className="text-gray-900 transition-colors hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400">
                               {title}
                             </Link>
                           </h2>

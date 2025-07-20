@@ -22,7 +22,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-space-inter)', 'Geneva'],
+        sans: ['var(--font-outfit)', 'Geneva'],
       },
       colors: {
         primary: {

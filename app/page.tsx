@@ -5,7 +5,7 @@ import NextImage from 'next/image'
 export default async function Home() {
   const name = 'Arjun Rao'
   const avatar = '/static/images/arjun.webp'
-  const occupation = 'Director of Engineering, Selection'
+  const occupation = 'Senior Director of Engineering'
   const company = 'StubHub'
   const twitter = 'https://twitter.com/raoarjun'
   const linkedin = 'https://www.linkedin.com/in/arjunrao87/'
@@ -51,8 +51,8 @@ export default async function Home() {
             </p>
             <div className="space-y-4">
               <p className="text-lg leading-7 text-slate-700 dark:text-slate-300">
-                I lead the Selection teams at StubHub that are responsible for creating the world's
-                best event and ticket selection experience for live events!
+                I lead engineering teams at StubHub responsible for creating the world's best event
+                and ticket selection experience for live events!
               </p>
               <p className="text-lg leading-7 text-slate-700 dark:text-slate-300">
                 Previously I was SVP of Engineering at Place Exchange and VP of Engineering at
