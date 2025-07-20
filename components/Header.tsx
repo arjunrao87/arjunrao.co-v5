@@ -26,13 +26,15 @@ const Header = () => {
         {headerNavLinks
           .filter((link) => link.href !== '/')
           .map((link) => {
-            const isActive = pathname === link.href
+            const isActive = pathname === link.href || pathname.startsWith(link.href + '/')
             return (
               <Link
                 key={link.title}
                 href={link.href}
-                className={`hidden font-semibold text-gray-900 transition-colors hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400 sm:block relative ${
-                  isActive ? 'after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-0.5 after:bg-primary-500' : ''
+                className={`relative hidden text-lg font-semibold text-gray-900 transition-colors hover:text-primary-600 dark:text-gray-100 dark:hover:text-primary-400 sm:block ${
+                  isActive
+                    ? 'after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-0.5 after:bg-primary-500'
+                    : ''
                 }`}
               >
                 {link.title}

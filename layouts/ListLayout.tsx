@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import { formatDate } from 'pliny/utils/formatDate'
 import { CoreContent } from 'pliny/utils/contentlayer'
-import type { Post } from 'contentlayer/generated'
+import type { Post } from '@/.content-collections/generated'
 import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 

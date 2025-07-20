@@ -2,10 +2,10 @@ import 'css/prism.css'
 import 'katex/dist/katex.css'
 
 import { components } from '@/components/MDXComponents'
-import { MDXLayoutRenderer } from 'pliny/mdx-components'
+import { MDXRemote } from 'next-mdx-remote/rsc'
 import { sortPosts, coreContent, allCoreContent } from 'pliny/utils/contentlayer'
-import { allPosts, allAuthors } from 'contentlayer/generated'
-import type { Authors, Post } from 'contentlayer/generated'
+import { allPosts, allAuthors } from '@/.content-collections/generated'
+import type { Author as Authors, Post } from '@/.content-collections/generated'
 import PostLayout from '@/layouts/PostLayout'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
@@ -76,7 +76,17 @@ export default async function Page({ params }: { params: { slug: string[] } }) {
     return notFound()
   }
   const prev = sortedCoreContents[postIndex + 1]
+    ? {
+        path: sortedCoreContents[postIndex + 1].path,
+        title: sortedCoreContents[postIndex + 1].title,
+      }
+    : undefined
   const next = sortedCoreContents[postIndex - 1]
+    ? {
+        path: sortedCoreContents[postIndex - 1].path,
+        title: sortedCoreContents[postIndex - 1].title,
+      }
+    : undefined
   const post = allPosts.find((p) => p.slug === slug) as Post
   const authorList = post?.authors || ['default']
   const authorDetails = authorList.map((author) => {
@@ -99,7 +109,15 @@ export default async function Page({ params }: { params: { slug: string[] } }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PostLayout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
-        <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
+        <MDXRemote
+          source={post.body.raw}
+          components={components}
+          options={{
+            scope: {
+              props: { toc: [] },
+            },
+          }}
+        />
       </PostLayout>
     </>
   )
