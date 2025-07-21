@@ -1,5 +1,5 @@
 import projectsData from '@/data/projectsData'
-import Card from '@/components/Card'
+import ProjectCard from '@/components/ProjectCard'
 import { genPageMetadata } from 'app/seo'
 import Script from 'next/script'
 
@@ -15,14 +15,19 @@ export default function Projects() {
       ></Script>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="container py-12">
-          <div className="-m-4 flex flex-wrap">
-            {projectsData.map((d) => (
-              <Card
-                key={d.title}
-                title={d.title}
-                description={d.description}
-                imgSrc={d.imgSrc}
-                href={d.href}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {projectsData.map((project) => (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                imgSrc={project.imgSrc}
+                href={project.href}
+                technologies={project.technologies}
+                category={project.category}
+                status={project.status}
+                metrics={project.metrics}
+                year={project.year}
               />
             ))}
           </div>
