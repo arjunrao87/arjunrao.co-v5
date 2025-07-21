@@ -60,7 +60,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
           )}
           <div className="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:gap-x-6 xl:divide-y-0">
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose prose-stone max-w-none pb-8 pt-10 text-justify dark:prose-invert">
+              <div className="prose prose-stone max-w-none overflow-x-hidden pb-8 pt-10 text-justify dark:prose-invert">
                 {children}
               </div>
             </div>
