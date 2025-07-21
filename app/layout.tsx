@@ -79,9 +79,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <GoogleTagManager gtmId="G-29Z9K4REX1" />
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
-            <div className="flex h-screen flex-col justify-between font-sans">
+            <div className="flex min-h-screen flex-col font-sans">
               <Header />
-              <main className="mb-auto">{children}</main>
+              <main className="flex-1">{children}</main>
               <Footer />
             </div>
           </SectionContainer>
