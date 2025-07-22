@@ -81,10 +81,7 @@ export default async function Home() {
               </div>
               <div className="grid gap-6">
                 {latestPosts.map((post) => (
-                  <article
-                    key={post.slug}
-                    className="group"
-                  >
+                  <article key={post.slug} className="group">
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
                         <time dateTime={post.date}>
