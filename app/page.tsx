@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import SocialIcon from '@/components/social-icons'
 import NextImage from 'next/image'
+import { allPosts } from '@/.content-collections/generated'
+import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
 
 export default async function Home() {
   const name = 'Arjun Rao'
@@ -10,6 +12,12 @@ export default async function Home() {
   const twitter = 'https://twitter.com/raoarjun'
   const linkedin = 'https://www.linkedin.com/in/arjunrao87/'
   const github = 'https://github.com/arjunrao87'
+
+  // Get latest blog posts
+  const sortedPosts = sortPosts(allPosts)
+  const posts = allCoreContent(sortedPosts)
+  const latestPosts = posts.filter((post) => !post.draft).slice(0, 3)
+
   return (
     <>
       <div className="divide-y divide-slate-200 dark:divide-slate-700">
@@ -58,6 +66,61 @@ export default async function Home() {
                 Previously I was SVP of Engineering at Place Exchange and VP of Engineering at
                 BlackRock.
               </p>
+            </div>
+            <div className="mt-8">
+              <div className="mb-6 flex items-center justify-between">
+                <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+                  Latest Writings
+                </h2>
+                <Link
+                  href="/posts"
+                  className="font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  View all →
+                </Link>
+              </div>
+              <div className="grid gap-6">
+                {latestPosts.map((post) => (
+                  <article key={post.slug} className="group">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                        <time dateTime={post.date}>
+                          {new Date(post.date).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                          })}
+                        </time>
+                        <span>•</span>
+                        <span>{post.readingTime.text}</span>
+                      </div>
+                      <h3 className="text-lg font-semibold leading-6">
+                        <Link
+                          href={`/${post.path}`}
+                          className="text-slate-900 transition-colors group-hover:text-primary-600 dark:text-slate-100 dark:group-hover:text-primary-400"
+                        >
+                          {post.title}
+                        </Link>
+                      </h3>
+                      {post.summary && (
+                        <p className="leading-6 text-slate-600 dark:text-slate-300">
+                          {post.summary}
+                        </p>
+                      )}
+                      <div className="flex flex-wrap gap-2">
+                        {post.tags.slice(0, 3).map((tag) => (
+                          <span
+                            key={tag}
+                            className="inline-flex items-center rounded-full bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-200"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>
