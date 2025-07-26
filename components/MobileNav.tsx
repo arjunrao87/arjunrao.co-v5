@@ -39,6 +39,7 @@ const MobileNav = () => {
       {navShow && (
         <div
           className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm transition-opacity duration-300"
+          style={{ left: '0px', top: '0px', right: '0px', bottom: '0px' }}
           onClick={onToggleNav}
           onKeyDown={(e) => e.key === 'Escape' && onToggleNav()}
           role="button"
@@ -48,8 +49,9 @@ const MobileNav = () => {
       )}
       <div
         className={`fixed right-0 top-0 z-50 h-full w-80 max-w-[85vw] transform bg-white/95 shadow-2xl backdrop-blur-md duration-300 ease-in-out dark:bg-gray-950/95 ${
-          navShow ? 'translate-x-0' : 'translate-x-full'
+          navShow ? 'translate-x-0' : 'translate-x-full opacity-0'
         }`}
+        style={{ top: '0px', right: '0px', height: '100vh' }}
       >
         <div className="flex h-full flex-col">
           <div className="flex items-center justify-between border-b border-gray-200/50 px-6 py-6 dark:border-gray-700/50">
