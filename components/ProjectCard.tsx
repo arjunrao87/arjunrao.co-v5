@@ -24,7 +24,7 @@ const ProjectCard = ({
   metrics,
   year,
 }: ProjectCardProps) => (
-  <div className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800">
+  <div className="group relative overflow-hidden rounded-xl bg-gradient-card shadow-card backdrop-blur-sm transition-all duration-300 focus-within:shadow-card-focus hover:-translate-y-1 hover:shadow-card-hover dark:bg-gradient-card-dark dark:shadow-slate-900/20">
     {imgSrc && (
       <div className="relative aspect-video overflow-hidden">
         {href ? (
