@@ -79,18 +79,18 @@ module.exports = {
         },
         gray: colors.slate,
         background: {
-          light: '#fefefe',
+          light: '#fefdfb',
           dark: '#0f172a',
         },
         surface: {
-          light: '#f8fafc',
+          light: '#fbf9f6',
           dark: '#1e293b',
         },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-subtle': 'linear-gradient(135deg, #fefefe 0%, #f8fafc 40%, #f1f5f9 100%)',
+        'gradient-subtle': 'linear-gradient(135deg, #fefdfb 0%, #fbf9f6 40%, #f7f5f1 100%)',
         'gradient-subtle-dark': 'linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #334155 100%)',
         'gradient-mesh': `
           radial-gradient(at 40% 20%, hsla(28,100%,74%,0.05) 0px, transparent 50%),
