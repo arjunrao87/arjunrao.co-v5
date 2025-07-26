@@ -3,6 +3,13 @@ import SocialIcon from '@/components/social-icons'
 import NextImage from 'next/image'
 import { allPosts } from '@/.content-collections/generated'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Arjun Rao - Senior Director of Engineering at StubHub',
+  description:
+    'Arjun Rao is a Senior Director of Engineering at StubHub, leading engineering teams to create world-class event ticketing experiences. Previously SVP at Place Exchange and VP at BlackRock. Expertise in engineering leadership, technical strategy, and team building.',
+}
 
 export default async function Home() {
   const name = 'Arjun Rao'
@@ -26,11 +33,13 @@ export default async function Home() {
             {avatar && (
               <NextImage
                 src={avatar}
-                alt="avatar"
+                alt="Arjun Rao, Senior Director of Engineering at StubHub"
                 width={192}
                 height={192}
                 className="h-48 w-48 rounded-full"
                 priority={true}
+                fetchPriority="high"
+                sizes="192px"
               />
             )}
             <h3 className="prose prose-stone pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight dark:prose-invert">

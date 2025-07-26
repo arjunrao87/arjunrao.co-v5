@@ -84,7 +84,10 @@ export default function ListLayout({
                   <div className="space-y-3 xl:col-span-3">
                     <div>
                       <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <Link href={`/${path}`} className="text-gray-900 transition-colors hover:text-primary-600 active:text-primary-700 dark:text-gray-100 dark:hover:text-primary-400 dark:active:text-primary-300">
+                        <Link
+                          href={`/${path}`}
+                          className="text-gray-900 transition-colors hover:text-primary-600 active:text-primary-700 dark:text-gray-100 dark:hover:text-primary-400 dark:active:text-primary-300"
+                        >
                           {title}
                         </Link>
                       </h3>
