@@ -41,7 +41,9 @@ const Header = () => {
               </Link>
             )
           })}
-        <ModeToggle />
+        <div className="hidden sm:block">
+          <ModeToggle />
+        </div>
         <MobileNav />
       </div>
     </header>

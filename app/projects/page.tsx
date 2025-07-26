@@ -15,7 +15,7 @@ export default function Projects() {
       ></Script>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="container py-12">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-sm gap-8 sm:max-w-none sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {projectsData.map((project) => (
               <ProjectCard
                 key={project.title}
