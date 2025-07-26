@@ -81,8 +81,30 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-subtle': 'linear-gradient(135deg, #fefefe 0%, #f8fafc 100%)',
-        'gradient-subtle-dark': 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+        'gradient-subtle': 'linear-gradient(135deg, #fefefe 0%, #f8fafc 40%, #f1f5f9 100%)',
+        'gradient-subtle-dark': 'linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #334155 100%)',
+        'gradient-mesh': `
+          radial-gradient(at 40% 20%, hsla(28,100%,74%,0.05) 0px, transparent 50%),
+          radial-gradient(at 80% 0%, hsla(189,100%,56%,0.05) 0px, transparent 50%),
+          radial-gradient(at 0% 50%, hsla(355,100%,93%,0.05) 0px, transparent 50%),
+          radial-gradient(at 80% 50%, hsla(340,100%,76%,0.05) 0px, transparent 50%),
+          radial-gradient(at 0% 100%, hsla(22,100%,77%,0.05) 0px, transparent 50%),
+          radial-gradient(at 80% 100%, hsla(242,100%,70%,0.05) 0px, transparent 50%),
+          radial-gradient(at 0% 0%, hsla(343,100%,76%,0.05) 0px, transparent 50%)
+        `,
+        'gradient-mesh-dark': `
+          radial-gradient(at 40% 20%, hsla(28,100%,74%,0.03) 0px, transparent 50%),
+          radial-gradient(at 80% 0%, hsla(189,100%,56%,0.03) 0px, transparent 50%),
+          radial-gradient(at 0% 50%, hsla(355,100%,93%,0.03) 0px, transparent 50%),
+          radial-gradient(at 80% 50%, hsla(340,100%,76%,0.03) 0px, transparent 50%),
+          radial-gradient(at 0% 100%, hsla(22,100%,77%,0.03) 0px, transparent 50%),
+          radial-gradient(at 80% 100%, hsla(242,100%,70%,0.03) 0px, transparent 50%),
+          radial-gradient(at 0% 0%, hsla(343,100%,76%,0.03) 0px, transparent 50%)
+        `,
+        'gradient-hero': 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #bae6fd 50%, #f0f9ff 100%)',
+        'gradient-hero-dark': 'linear-gradient(135deg, #082f49 0%, #0c4a6e 25%, #075985 50%, #082f49 100%)',
+        'gradient-card': 'linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.8) 100%)',
+        'gradient-card-dark': 'linear-gradient(145deg, rgba(30,41,59,0.9) 0%, rgba(15,23,42,0.8) 100%)',
       },
       typography: ({ theme }) => ({
         DEFAULT: {

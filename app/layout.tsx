@@ -69,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fefefe" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f172a" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <body className="bg-gradient-subtle text-slate-900 antialiased transition-colors duration-300 dark:bg-gradient-subtle-dark dark:text-slate-100">
+      <body className="bg-gradient-subtle bg-gradient-mesh text-slate-900 antialiased transition-all duration-500 dark:bg-gradient-subtle-dark dark:bg-gradient-mesh-dark dark:text-slate-100">
         <Script
           data-goatcounter="https://arjunraov5.goatcounter.com/count"
           async
