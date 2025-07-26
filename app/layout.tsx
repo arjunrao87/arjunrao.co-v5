@@ -64,6 +64,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${outfit.variable} scroll-smooth`}
       suppressHydrationWarning
     >
+      {/* Performance optimizations */}
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="//analytics.umami.is" />
+      <link rel="dns-prefetch" href="//gc.zgo.at" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+
       {/* Core favicons */}
       <link rel="icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
       <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
@@ -143,9 +150,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-gradient-mesh bg-gradient-subtle text-slate-900 antialiased transition-all duration-500 dark:bg-gradient-mesh-dark dark:bg-gradient-subtle-dark dark:text-slate-100">
         <Script
           data-goatcounter="https://arjunraov5.goatcounter.com/count"
-          async
           src="//gc.zgo.at/count.js"
-        ></Script>
+          strategy="afterInteractive"
+        />
         <ThemeProviders>
           <GoogleTagManager gtmId="G-29Z9K4REX1" />
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />

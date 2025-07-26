@@ -38,6 +38,8 @@ export default async function Home() {
                 height={192}
                 className="h-48 w-48 rounded-full"
                 priority={true}
+                fetchPriority="high"
+                sizes="192px"
               />
             )}
             <h3 className="prose prose-stone pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight dark:prose-invert">
