@@ -13,7 +13,7 @@ Dive with me into the details of how you can use RAG to produce interesting resu
 
 RAG or Retrieval Augmented Generation is a really complicated way of saying “Knowledge base + LLM”. It describes a system that adds extra data, in addition to what the user provided, before querying the LLM. Where did that additional data come from? It could be from a number of different sources like vector databases, search engines, other pre-trained LLMs etc. 
 
-You can read my article for some more context around RAG. 
+For foundational concepts about RAG and how it fits into the LLM landscape, check out my [introduction to LLMs and RAG](/posts/llm-rag). 
 
 ## How does it work in practice?
 
@@ -35,7 +35,7 @@ As you can see, this is very straightforward. You are passing a prompt to an LLM
 
 The majority of use cases that use RAG today do so by using some form of vector databases to store the information that the LLM uses to enhance the answer to the prompt. You can read how vector stores (or vector databases) store information and why its a better alternative than something like a traditional SQL or NoSQL store [here](https://www.cloudflare.com/learning/ai/what-is-vector-database/)
 
-There are several flavors of vector databases ranging from commercial paid products like Pinecone to open source alternatives like ChromaDB and FAISS. I typically use ChromaDB because its easy to use and has a lot of support in the community. 
+There are several flavors of vector databases ranging from commercial paid products like Pinecone to open source alternatives like ChromaDB and FAISS. I typically use ChromaDB because its easy to use and has a lot of support in the community. For setting up the Ollama environment needed for this tutorial, see my [Ollama setup guide](/posts/ollama). 
 
 At a high level, this is how RAG works with vector stores — 
 

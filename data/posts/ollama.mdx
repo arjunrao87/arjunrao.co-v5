@@ -63,14 +63,14 @@ Select the model (let's say phi) that you would like to interact with from the [
 ```sh
 ollama pull phi 
 ```
-![](/static/images/ollama-pull.png)
+![Ollama command line interface pulling llama2 model for local LLM development](/static/images/ollama-pull.png)
 
 Once the download is complete, you can check to see whether the model is available locally by running - 
 
 ```sh
 ollama list
 ```
-![](/static/images/ollama-list.png)
+![Ollama model list showing available local large language models](/static/images/ollama-list.png)
 
 Now that the model is available, it is ready to be run with. You can run a model using the command - 
 
@@ -78,13 +78,13 @@ Now that the model is available, it is ready to be run with. You can run a model
 ollama run phi
 ```
 
-![](/static/images/ollama-run.gif)
+![Ollama running llama2 model demonstration with real-time chat interaction](/static/images/ollama-run.gif)
 
 The accuracy of the answers isn't always top notch, but you can address that by selecting different models or perhaps doing some fine tuning or implementing a RAG-like solution on your own to improve accuracy. 
 
 What I have demonstrated above is how you can use Ollama models using the command line prompt. However, if you check the inference server that Llama has running you can see that there are programmatic ways of accessing this by hitting port 11434. 
 
-![](/static/images/ollama-server.png)
+![Ollama server status showing local LLM inference engine running on localhost](/static/images/ollama-server.png)
 
 If you wanted to use Langchain to access your Ollama model, you can use something like - 
 
@@ -180,7 +180,7 @@ async def on_chat_start():
 
 The `Message` interface is what Chainlit uses to send responses back to the UI. You can construct messages with the simple content key and then you can embellish it with things like elements which in my case I have added an Image to, to show an image when the user first logs in. 
 
-![](/static/images/ollama-chat.png)
+![Ollama chat interface demonstrating local large language model conversation](/static/images/ollama-chat.png)
 
 The next step is to invoke Langchain to instantiate Ollama (with the model of your choice) and construct the prompt template. The usage of the cl.user_session is to mostly maintain separation of user contexts and histories, which just for the purposes of running a quick demo is not strictly required. Chain  is a Langchain interface called `Runnable` that is used to create custom chains. You can read more about that [here](https://python.langchain.com/docs/expression_language/interface). 
 

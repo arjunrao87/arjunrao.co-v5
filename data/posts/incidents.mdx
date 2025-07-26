@@ -38,22 +38,22 @@ Let us dive in for some details! 
 ## Automate your systems as much as you can
 You really want to minimize how many incidents you learn either through your customers or through some severe accounting discrepancy days or weeks from when the incident started. While “automation” is an overused word in engineering, this is one of those areas where you truly want to find the right balance of signal to noise ratio and ensure that you and your team receive alerts without needing any human intervention. If there are too many things to pick from, go super high level. What is the highest level metric you could pick? The one if the component systems fail to work as expected, will deviate from the norm? This could be tracking revenue flowing through the platform (for an e-commerce, financial or $-based platform), or number of current active users (for social media platforms). If you see the numbers crater or drop by a standard deviation or two, immediately alert the dev team. Focusing the first (or most important) alerts on the pulse of the business or the core user experience, is going to be a great metric to monitor. As you get more sophisticated and understand the system better, you can start to go deeper down the stack from an observability standpoint.
 
-![](/static/images/incident_green-graph.webp)
+![Green upward trending graph showing improved system performance and incident recovery](/static/images/incident_green-graph.webp)
 
 ## **Tracking leading vs lagging indicators**
 Leading indicators are predictive in nature and are likely to point to an issue about to happen whereas lagging indicators are post-hoc and are representative of the aftermath once the issue is well in progress. If you can tap into the leading indicators (such as say “Session duration” starting to go down) in addition to or in place of lagging indicators (such as say “number of orders placed plummeting”) you can likely avert something that is pretty catastrophic. 
 
-![](/static/images/incident_alert.webp)
+![Software incident alert notification interface showing system monitoring dashboard](/static/images/incident_alert.webp)
 
 ## “Actionable” Alerts should be self evident
 Your alerts must be self-evident so that it is crystal clear what next steps to take when they get fired. Whether it is to ascertain the severity of the issue, or to troubleshoot the incident, or remediate the issue, there should be enough details associated with the alert. You want to ensure it doesn’t require a lot of upfront discussion to determine what to do with the alert. You could stick these details in the content of the alert itself, or if its fairly verbose, you could link out to a runbook(s) that the team maintains for these type of issues. 
 
-![](/static/images/incident_alert_action.webp)
+![Incident response action buttons and workflow interface for engineering teams](/static/images/incident_alert_action.webp)
 
 ## Establish clear call chains and escalation paths
 Have a clear outline of what happens when an alert fires, including who it gets routed to based on things like service ownership, timezone awareness etc is critical to ensure rapid response. Beyond that immediate first line of defense, it is also equally critical to ensure there is clarity about how and who to, the incident responder could escalate the incident. Often times if the issue is complex or far bigger in scope than one person can handle, it might be necessary to pull in more senior folks (or multiple people on the team) as well as cross-functional stakeholders. Making all of that easily accessible through tooling (like PagerDuty, OpsGenie) or crystal clear documentation (run books, wiki pages, repo READMEs), might be the difference between a catastrophic incident or a nothing-burger. 
 
-![](/static/images/incident_callchain.webp)
+![Incident escalation call chain diagram for software engineering incident management](/static/images/incident_callchain.webp)
 
 ## Empower front lines to make big decisions
 While you need clear escalation paths, you don’t want that to be the default response. You must empower the first responders to be able to take real action to stem the bleeding or make on-the-spot decisions for remediation, without needing to consult senior management. This is both good for the company in terms of limiting fallout as well as for the employees who are giving a high responsibility that they are trusted to make big decisions. Reduce the red tape and increase the agency of individuals. 
@@ -61,7 +61,7 @@ While you need clear escalation paths, you don’t want that to be the default r
 ## Not all incidents are created equal
 Along with things like call chains and escalation paths, one other piece of collateral that is important is an incident priority scale. This is typically a quick reference for the first responder or the incident commander. It helps them quickly identify what the severity of the incident is and label it as such because it might warrant different grades of responses. Differentiating between critical incidents (like system outages or financial data corruption) and minor issues (such as color palette glitches) is essential for responders to avoid false alarms. It also ensures the team’s response remains effective and focused.
 
-![](/static/images/incident_priority.webp)
+![Incident priority matrix showing severity levels for software engineering incidents](/static/images/incident_priority.webp)
 
 ## Resolve first, ask questions later
 Without question, one of the most important things to do is to resolve the incident as quickly as possible. You do not want to spend time philosophizing why something happened or how it could have been prevented, while the incident is underway. You can reserve that for the post mortem. For the moment, just ruthlessly focus on resolving the incident and ask the tough questions later. 
@@ -69,12 +69,12 @@ Without question, one of the most important things to do is to resolve the incid
 ## Make sure one person is in charge
 Sometimes incidents can get too big. They touch too many services, they span multiple business domains, or they are just really impactful in terms of revenue or reputation. Thats when it is absolutely crucial that there is one person appointed to “traffic cop” the entire incident. At Place Exchange, we have instituted “Incident Commanders” who are a small group of people who are trained in complex incident response. The reason it is so important to have this kind of a role, is because when there are multiple parties involved, someone needs to be directing the traffic. Oftentimes engineers will start going down rabbit holes about the complexity of the problem or trying to understand how to solve the problem. The role of the Incident Commander is to keep the focus of the group on rapid incident resolution. They make sure that everyone has a bias to action and while side investigations might be important, ensuring forward momentum is even more important. They are also responsible for ensuring that there is clear and constant communication with both internal and external stakeholders and partners. Incident commanders typically will start a synchronous line of voice communication, like a Slack huddle or a Google Meet meeting. This ensures that the folks crucial to the resolution of the incident are in constant contact. It is amazing how effective this small thing is compared to just allowing people to solve things async using chat. Incident commanders are also responsible for ensuring there is clear delegation for tasks that need to get done and make sure there is accountability for getting back responses or outcomes for those tasks. As they say, if you ask 2 people to feed a horse, the horse dies. An incident commander prevents that from happening and ultimately is responsible for the swift resolution of the incident. 
 
-![](/static/images/incident_traffic_cop.webp)
+![Traffic cop illustration representing incident commander role in software incident management](/static/images/incident_traffic_cop.webp)
 
 ## Communicate clearly and frequently
 People will often forgive their favorite app or software down, if they are being kept apprised of how the team is working hard at resolving the incident. Trying to keep things hidden either because you don’t feel you have a complete handle on the incident, or you and your team feel embarrassed about it, are no reasons to stop the communication from flowing outwards. Make sure the communication is concise, frequent and transparent to both your internal and external partners as that will help build goodwill.
 
-![](/static/images/incident_communication.webp)
+![Communication workflow diagram for incident response and stakeholder updates](/static/images/incident_communication.webp)
 
 ## Blameless post mortems are crucial
 Post mortems or post-incident retrospectives are important to build a culture of learning and they absolutely must be blameless. Be critical of the process not the person. No one is harder on themselves than the person(s) who might have caused this and you gain nothing from flagellating them in public. If anything, all research suggests that you actually lose by doing this. The folks at Etsy are much better at talking about it, so go read https://www.etsy.com/codeascraft/blameless-postmortems if you want to learn more. 

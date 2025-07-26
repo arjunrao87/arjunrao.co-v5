@@ -42,7 +42,9 @@ export async function generateMetadata({
 
   return {
     title: post.title,
-    description: post.summary,
+    description: post.summary
+      ? `${post.summary} - by Arjun Rao`
+      : `${post.title} - Engineering insights by Arjun Rao, Senior Director of Engineering at StubHub`,
     openGraph: {
       title: post.title,
       description: post.summary,

@@ -12,7 +12,7 @@ Like most people in tech, I have been enthralled by the possibilities of this ne
 I am on a quest to better understand the foundational blocks of where this space is at. I expect this to be the bedrock of most modern software application building from this point on. As I continue to expand into the fog of war (shoutout to all the Age of Empires players out there), I expect this map to be refined and updated with time.
 
 
-![](/static/images/aoe.jpeg)
+![Age of Empires fog of war screenshot illustrating learning journey metaphor](/static/images/aoe.jpeg)
 >> Age of Empires — best game ever made
 
 Here is the skeletal outline of the pieces I have encountered so far — 
@@ -26,7 +26,7 @@ Here is the skeletal outline of the pieces I have encountered so far — 
     - [Inference](#inference)
 - [Local LLMs](#local-llms)
 
-![](/static/images/llm-outline.png)
+![Large Language Model components outline diagram showing ML architecture](/static/images/llm-outline.png)
 Don’t pay attention to the apparent hierarchy. It merely represents the path my questfinding took.
 
 You have to, of course, start with LLMs (Large Language Models), the space that OpenAI broke into with a sledgehammer. While there were plenty of incumbents in this space (namely models like BERT or proprietary domain models held closed-source by companies like Google or Meta or Spotify), ChatGPT pulled the rug on this space and brought things out in the open. 
@@ -39,7 +39,7 @@ There is plenty of literature out there on LLMs and how they work (check the res
 
 Foundation Models [FMs] (or base models) are built using a LOT of data — the data we are talking about could be in the 100s of petabytes range, if not more. The purpose of this process is to go wide, not deep. Datasets could span several domains, formats, timespans — all in the hope of pre-training the base model with unlabeled and self-supervised data. Foundation models are capable of performing a variety of general tasks such as generating text, visual comprehension and conversing in natural language. Foundation models can be refined to develop more specialized downstream models for specific applications. You can think of Foundation models as being a superset of LLMs. 
 
-![](/static/images/llm-venn.png)
+![Venn diagram showing relationship between Foundation Models and Large Language Models](/static/images/llm-venn.png)
 
 ## Large Language Models 
 
@@ -78,14 +78,14 @@ Large models can be trained on specific subsets/corpus of data to make them expe
 
 RAG or Retrieval Augmented Generation is a really complicated way of saying “Knowledge base + LLM”. It describes a system that adds extra data, in addition to what the user provided, before querying the LLM. Where did that extra data come from? Well it could be from any number of external sources. 
 
-![](/static/images/rag.png)
+![RAG Retrieval Augmented Generation system architecture diagram with knowledge base](/static/images/rag.png)
 
 As shown in the diagram above, based on the prompt provided by the user, the server system could fabricate a query which it believes would enhance the quality of the response provided by the LLM. To do so, it could query external knowledge sources (outside of the training data of the LLM) like 
 - ephemeral data using vector database
 - search indexes using Lucene 
 - another pre-trained LLM that responds with a very specific set of context 
 
-This is the “Retrieval” step. Once the extra data has been received, the server then sends the prompt with this additional data (the “augmentation” step) to the LLM which “generates” the response sent back to the user. 
+This is the "Retrieval" step. Once the extra data has been received, the server then sends the prompt with this additional data (the "augmentation" step) to the LLM which "generates" the response sent back to the user. For a practical implementation of RAG using Ollama, Langchain and ChromaDB, see my [RAG experiments tutorial](/posts/rag-experiments). 
 
 >> I recently read this article which rang the death knell on RAG by proposing an “Intelligent Agent” approach, but this approach doesn’t have widespread adoption thus far.
 
@@ -100,9 +100,9 @@ Something that I have been fascinated by is the “recent” (maybe 8 or so mont
 - Avoid vendor lock-in, since you could run these inferences on your own commodity hardware.
 - Data is yours, and you don’t need to worry about data corruption or leakage. 
 
-There are a couple of pre-eminent players in this space particularly Ollama and LMStudio. I have been using Ollama for the last week or so and have been amazed by the capabilities it unlocks. I can get into this in an upcoming post. 
+There are a couple of pre-eminent players in this space particularly Ollama and LMStudio. I have been using Ollama for the last week or so and have been amazed by the capabilities it unlocks. For a hands-on guide to getting started with Ollama, check out my post on [Using Ollama: Getting hands-on with local LLMs and building a chatbot](/posts/ollama). 
 
-![](/static/images/ollama-home.png)
+![Ollama homepage interface for local large language model management](/static/images/ollama-home.png)
 
 There are a couple of things required to make local LLMs happen — 
 
