@@ -66,7 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <link rel="icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
       <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fefefe" />
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fefdfb" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f172a" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <body className="bg-gradient-mesh bg-gradient-subtle text-slate-900 antialiased transition-all duration-500 dark:bg-gradient-mesh-dark dark:bg-gradient-subtle-dark dark:text-slate-100">
