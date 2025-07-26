@@ -3,7 +3,11 @@ import Script from 'next/script'
 import Link from 'next/link'
 import NextImage from 'next/image'
 
-export const metadata = genPageMetadata({ title: 'Newsletter' })
+export const metadata = genPageMetadata({
+  title: 'A1 Engineering Newsletter by Arjun Rao',
+  description:
+    'Subscribe to A1 Engineering newsletter by Arjun Rao for expert insights on engineering leadership, software development best practices, and technical strategy. Learn from a Senior Director of Engineering at StubHub with experience at BlackRock and Place Exchange.',
+})
 
 export default function Newsletter() {
   return (

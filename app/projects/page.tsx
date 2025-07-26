@@ -3,7 +3,11 @@ import ProjectCard from '@/components/ProjectCard'
 import { genPageMetadata } from 'app/seo'
 import Script from 'next/script'
 
-export const metadata = genPageMetadata({ title: 'Projects' })
+export const metadata = genPageMetadata({
+  title: 'Engineering Projects by Arjun Rao',
+  description:
+    'Technical projects and engineering achievements by Arjun Rao, showcasing expertise in software architecture, team leadership, and innovative technology solutions. Professional and personal projects spanning fintech, adtech, and ticketing platforms.',
+})
 
 export default function Projects() {
   return (

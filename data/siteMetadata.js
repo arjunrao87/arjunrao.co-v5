@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'arjunrao',
   author: 'Arjun Rao',
   headerTitle: 'arjunrao',
-  description: 'Arjuns Virtual Home',
+  description: 'Senior Director of Engineering, StubHub. Previously: BlackRock, Place Exchange, Harris Corporation',
   language: 'en-us',
   theme: 'system', // system, dark or light
   socialBanner: '',
