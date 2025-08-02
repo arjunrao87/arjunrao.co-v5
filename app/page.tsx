@@ -16,6 +16,7 @@ export default async function Home() {
   const avatar = '/static/images/arjun.webp'
   const occupation = 'Senior Director of Engineering'
   const company = 'StubHub'
+  const location = 'Brooklyn, New York'
   const twitter = 'https://twitter.com/raoarjun'
   const linkedin = 'https://www.linkedin.com/in/arjunrao87/'
   const github = 'https://github.com/arjunrao87'
@@ -56,6 +57,9 @@ export default async function Home() {
               >
                 {company}
               </a>
+            </div>
+            <div className="prose prose-stone text-lg font-medium text-slate-600 dark:prose-invert dark:text-slate-400">
+              📍 {location}
             </div>
             <div className="flex space-x-3 pt-6">
               <SocialIcon kind="github" href={github} />
