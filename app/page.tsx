@@ -30,40 +30,92 @@ export default async function Home() {
     <>
       <div className="divide-y divide-slate-200 dark:divide-slate-700">
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
-          <div className="flex flex-col items-center space-x-2 pt-8">
-            {avatar && (
-              <NextImage
-                src={avatar}
-                alt="Arjun Rao, Senior Director of Engineering at StubHub"
-                width={192}
-                height={192}
-                className="h-48 w-48 rounded-full"
-                priority={true}
-                fetchPriority="high"
-                sizes="192px"
-              />
-            )}
-            <h3 className="prose prose-stone pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight dark:prose-invert">
-              {name}
-            </h3>
-            <div className="prose prose-stone text-lg font-medium text-slate-700 dark:prose-invert dark:text-slate-300">
-              {occupation}
+          <div className="pt-6 sm:pt-8">
+            {/* Mobile horizontal layout */}
+            <div className="flex items-center gap-4 sm:hidden">
+              {avatar && (
+                <NextImage
+                  src={avatar}
+                  alt="Arjun Rao, Senior Director of Engineering at StubHub"
+                  width={96}
+                  height={96}
+                  className="h-20 w-20 flex-shrink-0 rounded-full"
+                  priority={true}
+                  fetchPriority="high"
+                  sizes="80px"
+                />
+              )}
+              <div className="flex-1 space-y-1">
+                <h3 className="text-2xl font-extrabold leading-tight tracking-tight text-slate-900 dark:text-slate-100">
+                  {name}
+                </h3>
+                <div className="text-base font-medium text-slate-700 dark:text-slate-300">
+                  {occupation}
+                </div>
+                <div className="text-base font-medium text-slate-700 dark:text-slate-300">
+                  {company}
+                </div>
+                <div className="text-base font-medium text-slate-600 dark:text-slate-400">
+                  📍 {location}
+                </div>
+                <div className="flex gap-3 pt-2 text-base font-medium">
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                  >
+                    GitHub
+                  </a>
+                  <span className="text-slate-400 dark:text-slate-600">•</span>
+                  <a
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="prose prose-stone text-lg font-medium dark:prose-invert">
-              <a
-                href="https://www.stubhub.com/"
-                target="_blank"
-                className="text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-              >
-                {company}
-              </a>
-            </div>
-            <div className="prose prose-stone text-lg font-medium text-slate-600 dark:prose-invert dark:text-slate-400">
-              📍 {location}
-            </div>
-            <div className="flex space-x-3 pt-6">
-              <SocialIcon kind="github" href={github} />
-              <SocialIcon kind="linkedin" href={linkedin} />
+
+            {/* Desktop vertical centered layout */}
+            <div className="hidden sm:flex sm:flex-col sm:items-center">
+              {avatar && (
+                <NextImage
+                  src={avatar}
+                  alt="Arjun Rao, Senior Director of Engineering at StubHub"
+                  width={192}
+                  height={192}
+                  className="h-48 w-48 rounded-full"
+                  priority={true}
+                  fetchPriority="high"
+                  sizes="192px"
+                />
+              )}
+              <h3 className="prose prose-stone pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight dark:prose-invert">
+                {name}
+              </h3>
+              <div className="prose prose-stone text-lg font-medium text-slate-700 dark:prose-invert dark:text-slate-300">
+                {occupation}
+              </div>
+              <div className="prose prose-stone text-lg font-medium dark:prose-invert">
+                <a
+                  href="https://www.stubhub.com/"
+                  target="_blank"
+                  className="text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  {company}
+                </a>
+              </div>
+              <div className="prose prose-stone text-lg font-medium text-slate-600 dark:prose-invert dark:text-slate-400">
+                📍 {location}
+              </div>
+              <div className="flex space-x-3 pt-6">
+                <SocialIcon kind="github" href={github} />
+                <SocialIcon kind="linkedin" href={linkedin} />
+              </div>
             </div>
           </div>
           <div className="prose prose-stone max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
@@ -72,12 +124,39 @@ export default async function Home() {
             </p>
             <div className="space-y-4">
               <p className="text-lg leading-7 text-slate-700 dark:text-slate-300">
-                I lead engineering teams at StubHub responsible for creating the world's best event
-                and ticket selection experience for live events!
+                Engineering leader obsessed with two things: building products people love and teams
+                that love building them.
               </p>
               <p className="text-lg leading-7 text-slate-700 dark:text-slate-300">
-                Previously I was SVP of Engineering at Place Exchange and VP of Engineering at
-                BlackRock.
+                Currently at{' '}
+                <a
+                  href="https://www.stubhub.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  StubHub
+                </a>{' '}
+                building the platform that powers millions of ticket purchases. Previously grew
+                engineering teams at{' '}
+                <a
+                  href="https://broadsign.com/blog/broadsign-announces-acquisition-of-place-exchange/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  Place Exchange
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://www.blackrock.com/aladdin/products/aladdin-studio#api-first-approach"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  BlackRock
+                </a>
+                . I share lessons learned along the way.
               </p>
             </div>
             <div className="mt-8">
