@@ -17,7 +17,6 @@ export default async function Home() {
   const occupation = 'Senior Director of Engineering'
   const company = 'StubHub'
   const location = 'Brooklyn, New York'
-  const twitter = 'https://twitter.com/raoarjun'
   const linkedin = 'https://www.linkedin.com/in/arjunrao87/'
   const github = 'https://github.com/arjunrao87'
 
@@ -94,22 +93,16 @@ export default async function Home() {
                   sizes="192px"
                 />
               )}
-              <h3 className="prose prose-stone pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight dark:prose-invert">
+              <h3 className="pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight text-slate-900 dark:text-slate-100">
                 {name}
               </h3>
-              <div className="prose prose-stone text-lg font-medium text-slate-700 dark:prose-invert dark:text-slate-300">
+              <div className="text-lg font-medium text-slate-700 dark:text-slate-300">
                 {occupation}
               </div>
-              <div className="prose prose-stone text-lg font-medium dark:prose-invert">
-                <a
-                  href="https://www.stubhub.com/"
-                  target="_blank"
-                  className="text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-                >
-                  {company}
-                </a>
+              <div className="text-lg font-medium text-slate-700 dark:text-slate-300">
+                {company}
               </div>
-              <div className="prose prose-stone text-lg font-medium text-slate-600 dark:prose-invert dark:text-slate-400">
+              <div className="text-lg font-medium text-slate-600 dark:text-slate-400">
                 📍 {location}
               </div>
               <div className="flex space-x-3 pt-6">
